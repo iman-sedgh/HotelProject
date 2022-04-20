@@ -14,4 +14,36 @@ public class RoomModel {
     @OneToOne(cascade= CascadeType.ALL)
     private HotelModel hotel;
 
+    //insert getter and setter
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public boolean isReserved() {
+        return isReserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        isReserved = reserved;
+    }
+
+    public HotelModel getHotel() {
+        return hotel;
+    }
+
+    public void setHotel(HotelModel hotel) {
+        this.hotel = hotel;
+    }
 }
