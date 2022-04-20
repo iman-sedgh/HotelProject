@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class HotelModel {
     @Id
-    @GeneratedValue(strategy =GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String name;
     private String city;
