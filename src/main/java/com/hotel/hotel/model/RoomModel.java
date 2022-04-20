@@ -10,7 +10,7 @@ public class RoomModel {
     @Id
     private int id;
     private String type;
-    private String status;
+    private boolean isReserved;
     @OneToOne(cascade= CascadeType.ALL)
     private HotelModel hotel;
 
