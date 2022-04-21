@@ -1,6 +1,6 @@
 package com.hotel.hotel.controller;
 
-import com.hotel.hotel.model.HotelModel;
+import com.hotel.hotel.model.HotelEntity;
 import com.hotel.hotel.repository.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +14,7 @@ public class HotelController {
 
     @RequestMapping("/iman")
     public String home(){
-        HotelModel hotel1 = new HotelModel();
+        HotelEntity hotel1 = new HotelEntity();
         hotel1.setName("hotel parsian");
         hotel1.setCity("Tehran");
         hotel1.setAddress("Azadi");
@@ -26,7 +26,7 @@ public class HotelController {
 
     @RequestMapping("/hotel")
     public String hotel(Model model){
-       HotelModel h = repo.findById(6).get();
+       HotelEntity h = repo.findById(6).get();
         model.addAttribute("hotel",h );
         return "home.jsp";
     }
