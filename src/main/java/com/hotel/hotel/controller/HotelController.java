@@ -26,7 +26,7 @@ public class HotelController {
 
     @RequestMapping("/hotel")
     public String hotel(Model model){
-       HotelEntity h = repo.findById(6).get();
+        HotelEntity h = repo.findById(6).get();
         model.addAttribute("hotel",h );
         return "home.jsp";
     }
