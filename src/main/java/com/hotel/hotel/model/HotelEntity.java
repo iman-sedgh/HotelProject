@@ -3,10 +3,9 @@ package com.hotel.hotel.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class HotelEntity {
@@ -39,4 +38,12 @@ public class HotelEntity {
     @Getter @Setter
     private int floorNumber;
 
+    @OneToMany(mappedBy = "hotel")
+    @Getter @Setter
+    private List<RoomEntity> rooms = new ArrayList<>();
+
+    public void addRoom(RoomEntity room){
+        this.rooms.add(room);
+        room.setHotel(this);
+    }
 }

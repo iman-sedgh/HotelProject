@@ -21,7 +21,7 @@ public class RoomEntity {
     @Getter @Setter
     private boolean isReserved;
 
-    @OneToOne(cascade= CascadeType.ALL)
+    @ManyToOne()
     @Getter @Setter
     private HotelEntity hotel;
 
