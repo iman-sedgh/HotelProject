@@ -13,13 +13,13 @@ public class RoomController {
     @Autowired
     RoomRepository roomRepository;
 
-    @RequestMapping("/room")
+    @RequestMapping("/hotelInfo")
     public String Room(){
         RoomEntity room1=new RoomEntity();
         room1.setType("2 khab");
         room1.setReserved(true);
         roomRepository.save(room1);
-        return "room.jsp";
+        return "hotelInformation.jsp";
     }
 
 }
