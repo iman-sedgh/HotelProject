@@ -9,5 +9,7 @@
         <h1> Welcome to </h1>
         <h2> Room type </h2>
         <p><h2> Reserve  </h2>  </p>
+
+         <p><h2> staff position  </h2>  </p>
     </body>
 </html>

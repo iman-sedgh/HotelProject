@@ -3,11 +3,9 @@ package com.hotel.hotel.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
+@Entity
 public class StaffPositionEntity {
 
     @Id
@@ -18,7 +16,7 @@ public class StaffPositionEntity {
     @Getter @Setter
     private String positionName;
 
-    @ManyToOne
+    @ManyToOne()
+    @Getter @Setter
     private HotelEntity hotel;
-
 }
