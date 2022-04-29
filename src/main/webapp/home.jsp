@@ -12,5 +12,6 @@
         <p><h2> address </h2> ${hotel.address} </p>
         <p><h2> number of rooms </h2> ${hotel.roomNumber} </p>
         <p><h2> number of floors </h2> ${hotel.floorNumber} </p>
+        <h4> to see ${hotel.name} information click <a href ="hotelInfo">here</a> </h4>
     </body>
 </html>
