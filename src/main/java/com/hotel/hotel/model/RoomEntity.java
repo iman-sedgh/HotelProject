@@ -18,16 +18,9 @@ public class RoomEntity {
     @Getter @Setter
     private String type;
 
-
+    @Getter @Setter
     private boolean isReserved;
 
-    public boolean isReserved() {
-        return isReserved;
-    }
-
-    public void setReserved(boolean reserved) {
-        isReserved = reserved;
-    }
 
     @ManyToOne()
     @Getter @Setter

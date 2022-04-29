@@ -1,5 +1,6 @@
 package com.hotel.hotel.controller;
 
+import com.hotel.hotel.model.HotelEntity;
 import com.hotel.hotel.model.RoomEntity;
 import com.hotel.hotel.model.StaffPositionEntity;
 import com.hotel.hotel.repository.RoomRepository;
@@ -23,18 +24,20 @@ public class InformationController {
 
 
         //for room
-
         RoomEntity room1=new RoomEntity();
         model.addAttribute("room",room1);
         room1.setType("2 khab");
         room1.setReserved(true);
         roomRepository.save(room1);
+
         //for staff
         StaffPositionEntity modir = new StaffPositionEntity();
         model.addAttribute("staffPosition",modir);
         modir.setPositionName("modir");
         staffPositionRepository.save(modir);
+
         return "hotelInformation.jsp";
+
     }
 
 }

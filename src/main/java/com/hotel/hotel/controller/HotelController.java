@@ -12,9 +12,10 @@ public class HotelController {
     @Autowired
     HotelRepository repo;
 
-    @RequestMapping("/iman")
-    public String home(){
+    @RequestMapping("/hotel")
+    public String home(Model model){
         HotelEntity hotel1 = new HotelEntity();
+        model.addAttribute("hotel",hotel1);
         hotel1.setName("hotel parsian");
         hotel1.setCity("Tehran");
         hotel1.setAddress("Azadi");
@@ -24,10 +25,10 @@ public class HotelController {
         return "home.jsp";
     }
 
-    @RequestMapping("/hotel")
+    /* @RequestMapping("/hotel")
     public String hotel(Model model){
         HotelEntity h = repo.findById(6).get();
         model.addAttribute("hotel",h );
         return "home.jsp";
-    }
+    }*/
 }
