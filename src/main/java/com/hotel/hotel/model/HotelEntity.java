@@ -46,4 +46,12 @@ public class HotelEntity {
         this.rooms.add(room);
         room.setHotel(this);
     }
+    @OneToMany(mappedBy = "hotel")
+    @Getter @Setter
+    private List<StaffPositionEntity> staffPosition=new ArrayList<>();
+
+    public void addStaff(StaffPositionEntity staffPosition){
+        this.staffPosition.add(staffPosition);
+        staffPosition.setHotel(this);
+    }
 }
