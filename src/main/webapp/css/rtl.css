@@ -6,7 +6,7 @@
    By Ran Yaniv Hartstein [ranh.co.il]
    
 -------------------------------------------------------------- */
-/* body {direction:rtl; text-align:right; align:rtl} */
+ body {direction:rtl; text-align:right !important; align:rtl}
 body .container { direction: rtl; }
 body .column {
   float: right;
@@ -107,3 +107,12 @@ body pre,body code,body tt { font-family: monospace; }
 body p img { float: right; margin: 1.5em 0 1.5em 1.5em; }
 body dd, body ul, body ol { margin-left: 0; margin-right: 1.5em;}
 body td, body th { text-align:right; }
+
+.reveal-lg-block{
+       direction: rtl;
+       text-align: right;
+
+}
+.unit-body{
+padding-right: 3%;
+}

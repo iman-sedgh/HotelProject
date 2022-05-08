@@ -35,22 +35,8 @@
               </li>
               <li><a href="about.html">درباره ما</a>
               </li>
-              <li><a href="#">شهر ها</a>
-                <div class="rd-navbar-megamenu">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <p class="text-big text-gray-base text-ubold veil reveal-md-block veil-tablet-md">Pages 1</p>
-                      <ul class="offset-md-top-20">
-                        <li><a href="press.html">تهران</a></li>
-                        <li><a href="services.html">شیراز</a></li>
-                        <li><a href="pricing.html">اصفهان</a></li>
-                        <li><a href="destinations.html">یزد</a></li>
-                        <li><a href="signup.html">بوشهر</a></li>
-                        <li><a href="signup-variant-2.html">کیش</a></li>
-                      </ul>
-                    </div>
-
-                  </div></div></li>
+              <li><a href="/login">ورود</a></li>
+              <li><a href="/register">ثبت نام</a></li>
 
             </ul>
           </div>
@@ -203,10 +189,10 @@
     <section class="section-80 section-md-top-70 bg-wild-wand">
       <div class="shell">
         <div>
-          <h3>Hot Tours</h3>
+          <h3>هتل های منتخب</h3>
         </div>
         <div class="offset-top-10">
-          <p>Check out our top-rated tours</p>
+          <p></p>
         </div>
         <div class="range range-xs-center offset-top-45">
 		<div class="cell-sm-5 cell-md-4 offset-top-30">
@@ -276,14 +262,14 @@
 
 
   </main>
-  <footer class="page-footer section-top-80 section-bottom-34 section-lg-bottom-15 text-sm-left">
+  <footer class="page-footer section-top-80 section-bottom-34 section-lg-bottom-15 text-sm-right">
     <div class="shell">
       <div class="range range-xs-center">
         <div class="cell-sm-8 cell-md-12">
           <div class="range range-xs-center">
             <div class="cell-sm-6 cell-md-3 cell-lg-4 cell-md-push-1"><a href="index.html"><img  height="60" src="images/logo-dark-299x60.png" alt=""></a>
               <div class="offset-top-20 inset-lg-right-80">
-                <p class="text-small">سامانه مدیریت هتل در حدود ۲ ماه توسط تیم ۳ نفره با استفاده از زبان برنامه نویسی جاوا و فریمورک اسپرینگ نوشته شده است</p>
+                <p class="text-small ">سامانه مدیریت هتل در حدود ۲ ماه توسط تیم ۳ نفره با استفاده از زبان برنامه نویسی جاوا و فریمورک اسپرینگ نوشته شده است</p>
               </div>
             </div>
             <div class="cell-sm-6 cell-md-3 cell-lg-2 cell-md-push-4">
