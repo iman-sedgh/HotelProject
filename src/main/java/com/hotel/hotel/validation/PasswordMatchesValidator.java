@@ -1,6 +1,6 @@
 package com.hotel.hotel.validation;
 
-import com.hotel.hotel.model.user.UserDto;
+import com.hotel.hotel.dto.UserDto;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

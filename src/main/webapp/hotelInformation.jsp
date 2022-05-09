@@ -6,7 +6,7 @@
         <link href="<c:url value="/css/common.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1> Welcome </h1>
+        <h1> Welcome to ${hotel.name}</h1>
         <p><h2> Room type </h2>${room.type}</p>
        <p> <h2> Reserve</h2>
         <c:choose>
@@ -19,6 +19,20 @@
                 <br />
             </c:otherwise>
         </c:choose> </p>
-        <p><h2> staff position </h2> ${staffPosition.positionName}<p>
+        <h1>Rooms</h1>
+        <c:forEach items="${hotel.rooms}" var="room">
+            <a href="/hotel/rooms/remove?hotelId=${hotel.id}&roomId=${room.id}">
+                <span>${room.type}</span>
+            </a>
+        </c:forEach>
+        <p><a href="/hotel/rooms/add?hotelId=${hotel.id}">add room</a></p>
+        <br>
+        <h1>Staffs</h1>
+        <c:forEach items="${hotel.staffPosition}" var="staff">
+            <a href="/hotel/staffs/remove?hotelId=${hotel.id}&staffId=${staff.id}">
+                <span>${staff.positionName}</span>
+            </a>
+        </c:forEach>
+        <p><a href="/hotel/staffs/add?hotelId=${hotel.id}">add staff</a></p>
     </body>
 </html>

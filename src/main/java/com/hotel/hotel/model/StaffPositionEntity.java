@@ -19,4 +19,9 @@ public class StaffPositionEntity {
     @ManyToOne()
     @Getter @Setter
     private HotelEntity hotel;
+
+    public StaffPositionEntity(){}
+    public StaffPositionEntity(String positionName){
+        this.positionName = positionName;
+    }
 }

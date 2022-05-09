@@ -2,9 +2,9 @@ package com.hotel.hotel.service;
 
 import com.hotel.hotel.exception.EmailAlreadyExistException;
 import com.hotel.hotel.exception.UsernameAlreadyExistException;
-import com.hotel.hotel.model.user.UserDto;
-import com.hotel.hotel.model.user.UserEntity;
-import com.hotel.hotel.model.user.UserRepository;
+import com.hotel.hotel.dto.UserDto;
+import com.hotel.hotel.model.UserEntity;
+import com.hotel.hotel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

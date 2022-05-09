@@ -1,4 +1,4 @@
-package com.hotel.hotel.model.user;
+package com.hotel.hotel.model;
 
 import lombok.Getter;
 import lombok.Setter;

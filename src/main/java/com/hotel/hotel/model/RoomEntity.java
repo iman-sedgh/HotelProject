@@ -26,5 +26,10 @@ public class RoomEntity {
     @Getter @Setter
     private HotelEntity hotel;
 
+    public RoomEntity(){}
+    public RoomEntity(String type){
+        this.type = type;
+        isReserved = false;
+    }
 
 }

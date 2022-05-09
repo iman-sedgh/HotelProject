@@ -1,6 +1,5 @@
 package com.hotel.hotel.model;
 
-import com.hotel.hotel.model.user.UserEntity;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;

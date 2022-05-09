@@ -1,4 +1,4 @@
-package com.hotel.hotel.model.user;
+package com.hotel.hotel.dto;
 
 import com.hotel.hotel.validation.PasswordMatches;
 import lombok.Getter;

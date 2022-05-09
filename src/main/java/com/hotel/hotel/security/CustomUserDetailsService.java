@@ -1,7 +1,7 @@
 package com.hotel.hotel.security;
 
-import com.hotel.hotel.model.user.UserEntity;
-import com.hotel.hotel.model.user.UserRepository;
+import com.hotel.hotel.model.UserEntity;
+import com.hotel.hotel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
