@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StaffPositionRepository extends JpaRepository<StaffPositionEntity,Integer> {
+    StaffPositionEntity findFirstByOrderByIdDesc();
 }
