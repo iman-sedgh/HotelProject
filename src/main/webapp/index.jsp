@@ -69,7 +69,7 @@
     </div>
   </header>
   <main class="page-content">
-   
+
     <section data-wow-delay=".2s" class="wow fadeIn section-parallax">
       <div data-on="false" data-md-on="true" class="rd-parallax">
         <div data-speed="0.25" data-type="media" data-url="images/options1.jpeg" class="rd-parallax-layer"></div>
@@ -185,8 +185,10 @@
           </div>
         </div>
       </div>
-    </section>    
-    <section class="section-80 section-md-top-70 bg-wild-wand">
+    </section>
+
+
+    <section dir="rtl" class="section-80 section-md-top-70 bg-wild-wand">
       <div class="shell">
         <div>
           <h3>هتل های منتخب</h3>
@@ -195,66 +197,71 @@
           <p></p>
         </div>
         <div class="range range-xs-center offset-top-45">
+
+
 		<div class="cell-sm-5 cell-md-4 offset-top-30">
             <div data-wow-delay=".2s" class="box-offer wow fadeInLeft">
               <div class="box-offer-img-wrap"><a href="tours-single.html"><img src="images/370x310.jpg" width="370" height="310" alt="" class="img-responsive center-block"></a></div>
-              <div class="box-offer-caption text-left">
-                <div class="pull-left">
-                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">England</a></div>
-                </div>
+              <div class="box-offer-caption text-right">
                 <div class="pull-right">
-                  <div class="box-offer-price text-gray-base">$4,500</div>
+                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">هتل پارس</a></div>
+                </div>
+                <div class="pull-left">
+                  <div class="box-offer-price text-gray-base">2 میلیون تومان</div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="offset-top-8 offset-xs-top-0">
                   <ul class="list-inline list-inline-13 list-inline-marked text-silver-chalice text-small">
-                    <li>London, Manchester, York</li>
-                    <li>10 days</li>
+                    <li>10 روز</li>
+                    <li class="pull-left">تهران، مشهد، شیراز</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="cell-sm-5 cell-md-4 offset-top-30">
             <div data-wow-delay=".2s" class="box-offer wow bounceIn">
               <div class="box-offer-img-wrap"><a href="tours-single.html"><img src="images/370x310.jpg" width="370" height="310" alt="" class="img-responsive center-block"></a></div>
-              <div class="box-offer-caption text-left">
-                <div class="pull-left">
-                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">Turkey</a></div>
-                </div>
+              <div class="box-offer-caption text-right">
                 <div class="pull-right">
-                  <div class="box-offer-price text-gray-base">$1,700</div>
+                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">هتل پارس</a></div>
+                </div>
+                <div class="pull-left">
+                  <div class="box-offer-price text-gray-base">2 میلیون تومان</div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="offset-top-8 offset-xs-top-0">
                   <ul class="list-inline list-inline-13 list-inline-marked text-silver-chalice text-small">
-                    <li>Istanbul, Antalya, Ephesus</li>
-                    <li>7 days</li>
+                    <li>10 روز</li>
+                    <li class="pull-left">تهران، مشهد، شیراز</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="cell-sm-5 cell-md-4 offset-top-30">
             <div data-wow-delay=".2s" class="box-offer wow fadeInRight">
               <div class="box-offer-img-wrap"><a href="tours-single.html"><img src="images/370x310.jpg" width="370" height="310" alt="" class="img-responsive center-block"></a></div>
-              <div class="box-offer-caption text-left">
-                <div class="pull-left">
-                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">United States</a></div>
-                </div>
+              <div class="box-offer-caption text-right">
                 <div class="pull-right">
-                  <div class="box-offer-price text-gray-base">$4,100</div>
+                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">هتل پارس</a></div>
+                </div>
+                <div class="pull-left">
+                  <div class="box-offer-price text-gray-base">2 میلیون تومان</div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="offset-top-8 offset-xs-top-0">
                   <ul class="list-inline list-inline-13 list-inline-marked text-silver-chalice text-small">
-                    <li> Washington, New York, Hollywood</li>
-                    <li>8 days</li>
+                    <li>10 روز</li>
+                    <li class="pull-left">تهران، مشهد، شیراز</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
         <div class="offset-top-50"><a href="tours-grid.html" class="btn btn-primary">View ALL TOURs</a></div>
       </div>
@@ -422,7 +429,7 @@
     </div>
   </div>
 </div>
-<script src="js/core.min.js"></script> 
+<script src="js/core.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
