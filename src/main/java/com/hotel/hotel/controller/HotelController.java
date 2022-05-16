@@ -3,7 +3,9 @@ package com.hotel.hotel.controller;
 import com.hotel.hotel.dto.HotelDto;
 import com.hotel.hotel.exception.HotelNotFoundException;
 import com.hotel.hotel.exception.RoomNotFoundException;
+import com.hotel.hotel.exception.StaffNotFoundException;
 import com.hotel.hotel.model.HotelEntity;
+import com.hotel.hotel.model.StaffEntity;
 import com.hotel.hotel.payload.CreateHotelRequest;
 import com.hotel.hotel.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,7 @@ public class HotelController {
         }
     }
 
+    //room section
     @GetMapping("/hotel/rooms/add")
     public String addRoomForm(@RequestParam("hotelId") int hotelId, Model model){
         model.addAttribute("hotelId",hotelId);
@@ -60,6 +63,14 @@ public class HotelController {
     }
 
 
+    //staff section
+
+    @GetMapping("/hotel/staffs/staffinfo")
+    public String staffInfo(Model model , @RequestParam("hotelId") int hotelId) {
+        model.addAttribute("hotelId", hotelId);
+        return "/addRoomForm.jsp";
+    }
+
     @GetMapping("/hotel/staffs/add")
     public String addStaffForm(@RequestParam("hotelId") int hotelId, Model model){
         model.addAttribute("hotelId",hotelId);
@@ -85,6 +96,8 @@ public class HotelController {
         hotelService.removeStaffPosition(staffId);
         return "/hotel?hotelId="+hotelId;
     }
+
+    //hotel section
 
     @GetMapping("/hotels")
     public String allHotels(Model model){

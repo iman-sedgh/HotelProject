@@ -56,8 +56,10 @@ public class StaffEntity {
         this.nationalCode = nationalCode;
         this.phoneNumber = phoneNumber;
     }
-    @OneToOne()
+    @ManyToMany()
     @Getter @Setter
     private StaffPositionEntity staffPosition;
 
+    public StaffEntity(String nationalCode) {
+    }
 }

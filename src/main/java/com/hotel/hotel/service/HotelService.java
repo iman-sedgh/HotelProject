@@ -2,14 +2,16 @@ package com.hotel.hotel.service;
 
 import com.hotel.hotel.dto.HotelDto;
 import com.hotel.hotel.exception.HotelNotFoundException;
-import com.hotel.hotel.exception.RoomNotFoundException;
+import com.hotel.hotel.exception.StaffNotFoundException;
 import com.hotel.hotel.model.HotelEntity;
 import com.hotel.hotel.model.RoomEntity;
+import com.hotel.hotel.model.StaffEntity;
 import com.hotel.hotel.model.StaffPositionEntity;
 import com.hotel.hotel.payload.CreateHotelRequest;
 import com.hotel.hotel.repository.HotelRepository;
 import com.hotel.hotel.repository.RoomRepository;
 import com.hotel.hotel.repository.StaffPositionRepository;
+import com.hotel.hotel.repository.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,9 @@ public class HotelService {
 
     @Autowired
     StaffPositionRepository staffPositionRepository;
+
+    @Autowired
+    StaffRepository staffRepository;
 
     public HotelEntity getHotelInfoById(int id) throws HotelNotFoundException {
         return hotelRepository.findById(id)
@@ -81,6 +86,19 @@ public class HotelService {
     }
     public void removeRoom(int roomId) {
         roomRepository.deleteById(roomId);
+    }
+
+    //staff section
+
+    public StaffPositionEntity addStaff(int id, String nationalCode) throws StaffNotFoundException {
+        StaffEntity staff = new StaffEntity(nationalCode);
+        StaffPositionEntity staffPosition = staffPositionRepository.findById(id)
+                .orElseThrow(StaffNotFoundException::new);
+
+        staff.setStaffPosition(staffPosition);
+
+
+            return staffPosition;
     }
 
     public HotelEntity addStaffPosition(int id, String positionName) throws HotelNotFoundException {
