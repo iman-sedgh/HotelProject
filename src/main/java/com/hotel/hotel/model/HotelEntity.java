@@ -84,7 +84,8 @@ public class HotelEntity {
             int roomNumber,
             int floorNumber,
             List<RoomEntity> rooms,
-            List<StaffPositionEntity> staffPosition
+            List<StaffPositionEntity> staffPosition,
+            List<StaffEntity> staffs
     ) {
         this.id = id;
         this.name = name;
@@ -96,5 +97,6 @@ public class HotelEntity {
         this.floorNumber = floorNumber;
         this.rooms = rooms;
         this.staffPosition = staffPosition;
+        this.staffs = staffs;
     }
 }
