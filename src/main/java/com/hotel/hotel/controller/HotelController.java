@@ -6,7 +6,6 @@ import com.hotel.hotel.exception.RoomNotFoundException;
 import com.hotel.hotel.exception.StaffNotFoundException;
 import com.hotel.hotel.model.HotelEntity;
 import com.hotel.hotel.model.StaffEntity;
-import com.hotel.hotel.payload.CreateHotelRequest;
 import com.hotel.hotel.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -116,13 +115,13 @@ public class HotelController {
 
     @GetMapping("/hotels/add")
     public String createHotelForm(Model model){
-        CreateHotelRequest hotel = new CreateHotelRequest();
+        HotelEntity hotel = new HotelEntity();
         model.addAttribute("hotel", hotel);
         return "/createHotelForm.jsp";
     }
 
     @PostMapping("/hotels/add")
-    public String createHotel(@ModelAttribute("hotel") CreateHotelRequest hotel,Model model){
+    public String createHotel(@ModelAttribute("hotel") HotelEntity hotel,Model model){
         HotelEntity newHotel = hotelService.createHotel(hotel);
         model.addAttribute("hotel",newHotel);
         return "/hotelInformation.jsp";

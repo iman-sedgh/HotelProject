@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Builder
 public class HotelEntity {
     @Id
     @Getter @Setter
@@ -46,17 +45,4 @@ public class HotelEntity {
     private List<StaffPositionEntity> staffPosition=new ArrayList<>();
 
     public HotelEntity(){}
-
-    public HotelEntity(int id, String name, String city, String address, String summary, String description, int roomNumber, int floorNumber, List<RoomEntity> rooms, List<StaffPositionEntity> staffPosition) {
-        this.id = id;
-        this.name = name;
-        this.city = city;
-        this.address = address;
-        this.summary = summary;
-        this.description = description;
-        this.roomNumber = roomNumber;
-        this.floorNumber = floorNumber;
-        this.rooms = rooms;
-        this.staffPosition = staffPosition;
-    }
 }

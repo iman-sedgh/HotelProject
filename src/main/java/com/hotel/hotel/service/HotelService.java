@@ -7,7 +7,6 @@ import com.hotel.hotel.model.HotelEntity;
 import com.hotel.hotel.model.RoomEntity;
 import com.hotel.hotel.model.StaffEntity;
 import com.hotel.hotel.model.StaffPositionEntity;
-import com.hotel.hotel.payload.CreateHotelRequest;
 import com.hotel.hotel.repository.HotelRepository;
 import com.hotel.hotel.repository.RoomRepository;
 import com.hotel.hotel.repository.StaffPositionRepository;
@@ -58,18 +57,8 @@ public class HotelService {
         }).toList();
     }
 
-    public HotelEntity createHotel(CreateHotelRequest hotel){
-        return hotelRepository.save(
-                HotelEntity.builder()
-                        .name(hotel.getName())
-                        .description(hotel.getDescription())
-                        .city(hotel.getCity())
-                        .address(hotel.getAddress())
-                        .roomNumber(hotel.getRoomNumber())
-                        .floorNumber(hotel.getFloorNumber())
-                        .summary(hotel.getSummary())
-                        .build()
-        );
+    public HotelEntity createHotel(HotelEntity hotel){
+        return hotelRepository.save(hotel);
     }
 
     public HotelEntity addRoom(int id, String roomType, int roomNumber) throws HotelNotFoundException {

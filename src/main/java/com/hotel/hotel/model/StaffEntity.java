@@ -49,27 +49,8 @@ public class StaffEntity {
 
     //fk to pos
 
-
-    public StaffEntity(
-            double salary,
-            String username,
-            String familyName,
-            String address,
-            String nationalCode,
-            String phoneNumber,
-            StaffPositionEntity staffPosition) {
-        this.salary = salary;
-        this.username = username;
-        this.familyName = familyName;
-        this.address = address;
-        this.nationalCode = nationalCode;
-        this.phoneNumber = phoneNumber;
-        this.staffPosition = staffPosition;
-    }
-
     public StaffEntity(String nationalCode) {
         this.nationalCode = nationalCode;
     }
-
     public StaffEntity(){}
 }
