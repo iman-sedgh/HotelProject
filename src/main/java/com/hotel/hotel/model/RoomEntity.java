@@ -9,8 +9,6 @@ import java.util.*;
 @Entity
 public class RoomEntity {
 
-
-
     @Id
     @Getter @Setter
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -23,26 +21,25 @@ public class RoomEntity {
     @Getter @Setter
     private List<ReservationEntity> reservations;
 
-    // show when(start,end date) the room reserverd
+//     show when(start,end date) the room reserverd
     @ElementCollection @Getter @Setter
-    private List<HashMap> reserved_dates = new ArrayList<HashMap>();
+    private List<HashMap<String,Date>> reserved_dates = new ArrayList<>();
 
     @Getter @Setter
     private int roomNumber;
 
-
-    @ManyToOne()
+    @ManyToOne
     @Getter @Setter
     private HotelEntity hotel;
 
     public RoomEntity addReservation(ReservationEntity reservation){
         this.reservations.add(reservation);
-        HashMap hMap = new HashMap();
+        HashMap<String,Date> hMap = new HashMap<String,Date>();
         hMap.put("start",reservation.getCheckInDT());
         hMap.put("end",reservation.getCheckOutDT());
 
         if (! this.reserved_dates.contains(hMap))
-        this.reserved_dates.add(hMap);
+            this.reserved_dates.add(hMap);
 
         return this;
     }
@@ -50,7 +47,6 @@ public class RoomEntity {
     public RoomEntity(){}
     public RoomEntity(String type){
         this.type = type;
-
     }
 
 }

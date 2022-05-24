@@ -10,56 +10,66 @@ import javax.validation.constraints.Size;
 @Entity
 @Table (name= "staffs",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = "nationalCode"),
-                @UniqueConstraint(columnNames = "phoneNumber"),
+                @UniqueConstraint(columnNames = "national_code"),
+                @UniqueConstraint(columnNames = "phone_number"),
         })
 
 public class StaffEntity {
 
     @Id
-    @Getter
-    @Setter
+    @Getter @Setter
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
-    @Getter @Setter @Column(name = "salary", nullable = false)
+    @Getter @Setter @Column(nullable = false)
     private double salary;
 
     @Size(max = 20)
-    @Getter @Setter @Column(name = "username", nullable = false)
+    @Getter @Setter @Column(nullable = false)
     private String username;
 
     @Size(max = 20)
-    @Getter @Setter @Column(name = "familyName", nullable = false)
+    @Getter @Setter @Column(name = "family_name", nullable = false)
     private String familyName;
 
-    @Getter @Setter @Column(name = "address", nullable = false)
+    @Getter @Setter @Column(nullable = false)
     private String address;
 
     @Size(max = 10)
-    @Getter @Setter @Column(name = "nationalCode", nullable = false)
+    @Getter @Setter @Column(name = "national_code",nullable = false)
     private String nationalCode;
 
     @Size(max = 11)
-    @Getter @Setter @Column(name = "phoneNumber", nullable = false)
+    @Getter @Setter @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
+    @ManyToOne
+    @Getter @Setter
+    private StaffPositionEntity staffPosition;
 
     //fk to pos
 
 
-    public StaffEntity(double salary, String username, String familyName, String address, String nationalCode, String phoneNumber) {
+    public StaffEntity(
+            double salary,
+            String username,
+            String familyName,
+            String address,
+            String nationalCode,
+            String phoneNumber,
+            StaffPositionEntity staffPosition) {
         this.salary = salary;
         this.username = username;
         this.familyName = familyName;
         this.address = address;
         this.nationalCode = nationalCode;
         this.phoneNumber = phoneNumber;
+        this.staffPosition = staffPosition;
     }
-    @ManyToMany()
-    @Getter @Setter
-    private StaffPositionEntity staffPosition;
 
     public StaffEntity(String nationalCode) {
+        this.nationalCode = nationalCode;
     }
+
+    public StaffEntity(){}
 }

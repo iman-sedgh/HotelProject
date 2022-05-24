@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class StaffPositionEntity {
@@ -16,9 +18,13 @@ public class StaffPositionEntity {
     @Getter @Setter
     private String positionName;
 
-    @ManyToOne()
+    @ManyToOne
     @Getter @Setter
     private HotelEntity hotel;
+
+    @OneToMany
+    @Getter @Setter
+    private List<StaffEntity> staffs = new ArrayList<>();
 
     public StaffPositionEntity(){}
     public StaffPositionEntity(String positionName){
