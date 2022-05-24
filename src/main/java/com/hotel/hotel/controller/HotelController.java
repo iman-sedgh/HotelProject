@@ -45,9 +45,10 @@ public class HotelController {
     @PostMapping("/hotel/rooms/add")
     public String addRoom(Model model,
                           @RequestParam("hotelId") int hotelId,
-                          @ModelAttribute("type") String type){
+                          @ModelAttribute("type") String type,
+                          @ModelAttribute("roomNumber") int roomNumber){
         try {
-            model.addAttribute("hotel",hotelService.addRoom(hotelId,type));
+            model.addAttribute("hotel",hotelService.addRoom(hotelId,type,roomNumber));
         }catch (HotelNotFoundException e){
             model.addAttribute("message","Hotel not found!");
         }

@@ -72,16 +72,14 @@ public class HotelService {
         );
     }
 
-    public HotelEntity addRoom(int id, String roomType) throws HotelNotFoundException {
-        RoomEntity room = new RoomEntity(roomType);
+    public HotelEntity addRoom(int id, String roomType, int roomNumber) throws HotelNotFoundException {
         HotelEntity hotel = hotelRepository.findById(id)
                 .orElseThrow(HotelNotFoundException::new);
+        RoomEntity room = new RoomEntity(roomType,roomNumber,hotel);
 
         room.setHotel(hotel);
         roomRepository.save(room);
 
-        hotel.addRoom(room);
-        hotelRepository.save(hotel);
         return hotel;
     }
     public void removeRoom(int roomId) {
@@ -109,8 +107,6 @@ public class HotelService {
         staff.setHotel(hotel);
         staffPositionRepository.save(staff);
 
-        hotel.addStaff(staff);
-        hotelRepository.save(hotel);
         return hotel;
     }
     public void removeStaffPosition(int staffPositionId){

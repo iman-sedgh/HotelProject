@@ -40,28 +40,10 @@ public class HotelEntity {
     @OneToMany
     @Getter @Setter
     private List<RoomEntity> rooms = new ArrayList<>();
-    public HotelEntity addRoom(RoomEntity room){
-        this.rooms.add(room);
-        room.setHotel(this);
-        return this;
-    }
-    public HotelEntity removeRoom(RoomEntity room){
-        this.rooms.remove(room);
-        return this;
-    }
 
     @OneToMany
     @Getter @Setter
     private List<StaffPositionEntity> staffPosition=new ArrayList<>();
-    public HotelEntity addStaff(StaffPositionEntity staffPosition){
-        this.staffPosition.add(staffPosition);
-        staffPosition.setHotel(this);
-        return this;
-    }
-    public HotelEntity removeStaff(StaffPositionEntity staffPosition){
-        this.staffPosition.remove(staffPosition);
-        return this;
-    }
 
     public HotelEntity(){}
 

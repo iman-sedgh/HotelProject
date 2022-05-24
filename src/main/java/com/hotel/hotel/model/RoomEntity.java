@@ -45,8 +45,10 @@ public class RoomEntity {
     }
 
     public RoomEntity(){}
-    public RoomEntity(String type){
+    public RoomEntity(String type,int roomNumber,HotelEntity hotel){
         this.type = type;
+        this.roomNumber = roomNumber;
+        this.hotel = hotel;
     }
 
 }
