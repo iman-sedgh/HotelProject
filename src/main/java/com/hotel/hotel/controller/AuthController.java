@@ -3,7 +3,7 @@ package com.hotel.hotel.controller;
 import com.hotel.hotel.exception.EmailAlreadyExistException;
 import com.hotel.hotel.exception.UsernameAlreadyExistException;
 import com.hotel.hotel.dto.UserDto;
-import com.hotel.hotel.service.UserService;
+import com.hotel.hotel.config.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

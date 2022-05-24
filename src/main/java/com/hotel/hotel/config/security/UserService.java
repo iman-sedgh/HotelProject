@@ -1,4 +1,4 @@
-package com.hotel.hotel.service;
+package com.hotel.hotel.config.security;
 
 import com.hotel.hotel.exception.EmailAlreadyExistException;
 import com.hotel.hotel.exception.UsernameAlreadyExistException;
