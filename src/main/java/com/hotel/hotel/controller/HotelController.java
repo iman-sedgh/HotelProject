@@ -2,11 +2,12 @@ package com.hotel.hotel.controller;
 
 import com.hotel.hotel.dto.HotelDto;
 import com.hotel.hotel.exception.HotelNotFoundException;
-import com.hotel.hotel.exception.RoomNotFoundException;
-import com.hotel.hotel.exception.StaffNotFoundException;
 import com.hotel.hotel.model.HotelEntity;
-import com.hotel.hotel.model.StaffEntity;
-import com.hotel.hotel.service.HotelService;
+import com.hotel.hotel.model.RoomEntity;
+import com.hotel.hotel.model.StaffPositionEntity;
+import com.hotel.hotel.repository.HotelRepository;
+import com.hotel.hotel.repository.RoomRepository;
+import com.hotel.hotel.repository.StaffPositionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,13 +19,17 @@ import java.util.List;
 public class HotelController {
 
     @Autowired
-    private HotelService hotelService;
-
+    private RoomRepository roomRepository;
+    @Autowired
+    StaffPositionRepository staffPositionRepository;
+    @Autowired
+    HotelRepository hotelRepository;
 
     @GetMapping("/hotel")
     public String hotelInfo(Model model, @RequestParam("hotelId") int hotelId){
         try {
-            HotelEntity hotelInfo = hotelService.getHotelInfoById(hotelId);
+            HotelEntity hotelInfo = hotelRepository.findById(hotelId)
+                    .orElseThrow(HotelNotFoundException::new);
             hotelInfo.getRooms().forEach(room -> System.out.println(room.getType()));
             model.addAttribute("hotel",hotelInfo);
             return "hotelInformation.jsp";
@@ -47,7 +52,14 @@ public class HotelController {
                           @ModelAttribute("type") String type,
                           @ModelAttribute("roomNumber") int roomNumber){
         try {
-            model.addAttribute("hotel",hotelService.addRoom(hotelId,type,roomNumber));
+            HotelEntity hotel = hotelRepository.findById(hotelId)
+                    .orElseThrow(HotelNotFoundException::new);
+            RoomEntity room = new RoomEntity(type,roomNumber,hotel);
+
+            room.setHotel(hotel);
+            roomRepository.save(room);
+
+            model.addAttribute("hotel",room);
         }catch (HotelNotFoundException e){
             model.addAttribute("message","Hotel not found!");
         }
@@ -58,7 +70,7 @@ public class HotelController {
     public String removeRoom(Model model,
                              @RequestParam("hotelId") int hotelId,
                              @RequestParam("roomId") int roomId){
-        hotelService.removeRoom(roomId);
+//        hotelService.removeRoom(roomId);
         return "/hotel?hotelId="+hotelId;
     }
 
@@ -82,7 +94,13 @@ public class HotelController {
                           @RequestParam("hotelId") int hotelId,
                           @ModelAttribute("positionName") String positionName){
         try {
-            model.addAttribute("hotel",hotelService.addStaffPosition(hotelId,positionName));
+            StaffPositionEntity staff = new StaffPositionEntity(positionName);
+            HotelEntity hotel = hotelRepository.findById(hotelId)
+                    .orElseThrow(HotelNotFoundException::new);
+
+            staff.setHotel(hotel);
+            staffPositionRepository.save(staff);
+            model.addAttribute("hotel",hotel);
         }catch (HotelNotFoundException e){
             model.addAttribute("message","Hotel not found!");
         }
@@ -93,7 +111,7 @@ public class HotelController {
     public String removeStaff(Model model,
                              @RequestParam("hotelId") int hotelId,
                              @RequestParam("staffId") int staffId){
-        hotelService.removeStaffPosition(staffId);
+        staffPositionRepository.deleteById(staffId);
         return "/hotel?hotelId="+hotelId;
     }
 
@@ -101,14 +119,28 @@ public class HotelController {
 
     @GetMapping("/hotels")
     public String allHotels(Model model){
-        List<HotelDto> hotels = hotelService.getAllHotels();
+        List<HotelDto> hotels = hotelRepository.findAll().stream().map(hotelEntity -> {
+            return HotelDto.builder()
+                    .id(hotelEntity.getId())
+                    .name(hotelEntity.getName())
+                    .city(hotelEntity.getCity())
+                    .address(hotelEntity.getAddress())
+                    .build();
+        }).toList();
         model.addAttribute("hotels",hotels);
         return "/hotels.jsp";
     }
 
     @GetMapping("/hotels/city")
     public String allHotelsByCity(Model model,@RequestParam("city") String city){
-        List<HotelDto> hotels = hotelService.getHotelsByCity(city);
+        List<HotelDto> hotels = hotelRepository.findAllByCity(city).stream().map(hotelEntity -> {
+            return HotelDto.builder()
+                    .id(hotelEntity.getId())
+                    .name(hotelEntity.getName())
+                    .city(hotelEntity.getCity())
+                    .address(hotelEntity.getAddress())
+                    .build();
+        }).toList();
         model.addAttribute("hotels",hotels);
         return "/hotels.jsp";
     }
@@ -122,8 +154,8 @@ public class HotelController {
 
     @PostMapping("/hotels/add")
     public String createHotel(@ModelAttribute("hotel") HotelEntity hotel,Model model){
-        HotelEntity newHotel = hotelService.createHotel(hotel);
-        model.addAttribute("hotel",newHotel);
+        hotelRepository.save(hotel);
+        model.addAttribute("hotel",hotel);
         return "/hotelInformation.jsp";
     }
 }
