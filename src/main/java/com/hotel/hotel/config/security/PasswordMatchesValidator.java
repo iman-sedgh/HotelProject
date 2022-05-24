@@ -1,4 +1,4 @@
-package com.hotel.hotel.validation;
+package com.hotel.hotel.config.security;
 
 import com.hotel.hotel.dto.UserDto;
 

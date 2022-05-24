@@ -1,6 +1,6 @@
 package com.hotel.hotel.dto;
 
-import com.hotel.hotel.validation.PasswordMatches;
+import com.hotel.hotel.config.security.PasswordMatches;
 import lombok.Getter;
 import lombok.Setter;
 

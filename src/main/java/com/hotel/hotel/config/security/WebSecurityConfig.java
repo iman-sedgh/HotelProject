@@ -1,6 +1,6 @@
-package com.hotel.hotel.config;
+package com.hotel.hotel.config.security;
 
-import com.hotel.hotel.security.CustomUserDetailsService;
+import com.hotel.hotel.config.security.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

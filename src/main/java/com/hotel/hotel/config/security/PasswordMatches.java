@@ -1,4 +1,4 @@
-package com.hotel.hotel.validation;
+package com.hotel.hotel.config.security;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

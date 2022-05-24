@@ -1,4 +1,4 @@
-package com.hotel.hotel.security;
+package com.hotel.hotel.config.security;
 
 import com.hotel.hotel.model.UserEntity;
 import org.springframework.security.core.GrantedAuthority;
