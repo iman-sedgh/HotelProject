@@ -3,7 +3,7 @@ package com.hotel.hotel.config.security;
 import com.hotel.hotel.exception.EmailAlreadyExistException;
 import com.hotel.hotel.exception.UsernameAlreadyExistException;
 import com.hotel.hotel.dto.UserDto;
-import com.hotel.hotel.model.UserEntity;
+import com.hotel.hotel.model.IdentityEntity;
 import com.hotel.hotel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -30,15 +30,12 @@ public class UserService {
         if(checkIfUserExistByUsername(user.getUsername())){
             throw new UsernameAlreadyExistException("Username is already taken!");
         }
-        UserEntity userEntity = new UserEntity();
-        userEntity.setFirstName(user.getFirstName());
-        userEntity.setLastName(user.getLastName());
-        userEntity.setUsername(user.getUsername());
-        userEntity.setEmail(user.getEmail());
-//        BeanUtils.copyProperties(user, userEntity);
-        encodePassword(userEntity, user);
-//        userEntity.setRoles(Set.of("ROLE_USER"));
-        userRepository.save(userEntity);
+        IdentityEntity identityEntity = new IdentityEntity();
+
+        identityEntity.setUsername(user.getUsername());
+        identityEntity.setEmail(user.getEmail());
+        encodePassword(identityEntity, user);
+        userRepository.save(identityEntity);
     }
 
 
@@ -49,7 +46,7 @@ public class UserService {
     public boolean checkIfUserExistByUsername(String username) {
         return userRepository.findByUsername(username).isPresent();
     }
-    private void encodePassword( UserEntity userEntity, UserDto user){
-        userEntity.setPassword(passwordEncoder.encode(user.getPassword()));
+    private void encodePassword(IdentityEntity identityEntity, UserDto user){
+        identityEntity.setPassword(passwordEncoder.encode(user.getPassword()));
     }
 }

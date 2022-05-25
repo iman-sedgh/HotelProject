@@ -1,6 +1,6 @@
 package com.hotel.hotel.config.security;
 
-import com.hotel.hotel.model.UserEntity;
+import com.hotel.hotel.model.IdentityEntity;
 import com.hotel.hotel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +13,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserEntity user = userRepo.findByUsername(username).orElse(null);
+        IdentityEntity user = userRepo.findByUsername(username).orElse(null);
         if (user == null) {
             throw new UsernameNotFoundException("User not found");
         }

@@ -13,14 +13,6 @@ public class UserDto {
 
     @Getter @Setter
     @NotNull @NotEmpty
-    private String firstName;
-
-    @Getter @Setter
-    @NotNull @NotEmpty
-    private String lastName;
-
-    @Getter @Setter
-    @NotNull @NotEmpty
     private String password;
 
     @Getter @Setter

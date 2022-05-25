@@ -1,13 +1,13 @@
 package com.hotel.hotel.repository;
 
-import com.hotel.hotel.model.UserEntity;
+import com.hotel.hotel.model.IdentityEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<UserEntity, Integer> {
-    Optional<UserEntity> findByEmail(String email);
+public interface UserRepository extends JpaRepository<IdentityEntity, Integer> {
+    Optional<IdentityEntity> findByEmail(String email);
 
-    Optional<UserEntity> findByUsername(String username);
-    UserEntity findFirstByOrderByIdDesc();
+    Optional<IdentityEntity> findByUsername(String username);
+    IdentityEntity findFirstByOrderByIdDesc();
 }

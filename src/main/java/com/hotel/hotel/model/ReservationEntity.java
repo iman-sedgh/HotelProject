@@ -20,7 +20,7 @@ public class ReservationEntity
 
     @ManyToOne
     @Getter @Setter
-    private UserEntity user;
+    private IdentityEntity user;
 
     @ManyToMany
     @Getter @Setter

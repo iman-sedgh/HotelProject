@@ -18,12 +18,12 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/register")
-    public String showRegistrationForm(Model model) {
-        UserDto userDto = new UserDto();
-        model.addAttribute("user", userDto);
-        return "register.jsp";
-    }
+//    @GetMapping("/register")
+//    public String showRegistrationForm(Model model) {
+//        UserDto userDto = new UserDto();
+//        model.addAttribute("user", userDto);
+//        return "register.jsp";
+//    }
 
     @PostMapping("/register")
     public String registerUserAccount(@ModelAttribute("user") @Valid UserDto userDto,Model model) {

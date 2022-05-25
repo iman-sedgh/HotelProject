@@ -36,18 +36,18 @@
               <div class="hero-mask opacity-9 bg-dark"></div>
               <div class="hero-content">
                 <div class="logo mb-4"> <a class="d-flex justify-content-center" href="index.php" title="Oxyy"><img src="img/logo.png" alt="Oxyy"></a> </div>
-                <form class="form-dark" action="register-check.php" method="POST">
+                <form class="form-dark" action="/register" method="POST">
                   <div class="form-group icon-group">
-                    <input type="text" name="fullname" class="form-control"   placeholder="نام کامل">
+                    <input type="text" name="username" class="form-control"   placeholder="نام کاربری">
                     <span class="icon-inside"><i class="fas fa-user"></i></span> </div>
                   <div class="form-group icon-group">
                     <input type="email" name="email" class="form-control"   placeholder="آدرس ایمیل">
                     <span class="icon-inside"><i class="fas fa-envelope"></i></span> </div>
                   <div class="form-group icon-group">
-                    <input type="password" name="password1" class="form-control"   placeholder="رمز عبور">
+                    <input type="password" name="password" class="form-control"   placeholder="رمز عبور">
                     <span class="icon-inside"><i class="fas fa-lock"></i></span> </div>
                     <div class="form-group icon-group">
-                    <input type="password" name="password2" class="form-control"   placeholder="تکرار رمز عبور">
+                    <input type="password" name="matchingPassword" class="form-control"   placeholder="تکرار رمز عبور">
                     <span class="icon-inside"><i class="fas fa-lock"></i></span> </div>
                   <button class="btn btn-primary btn-block mt-4 mb-3" type="submit">ثبت نام</button>
                 </form>

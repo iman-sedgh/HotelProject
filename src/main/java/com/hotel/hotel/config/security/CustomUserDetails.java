@@ -1,6 +1,6 @@
 package com.hotel.hotel.config.security;
 
-import com.hotel.hotel.model.UserEntity;
+import com.hotel.hotel.model.IdentityEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -8,9 +8,9 @@ import java.util.Collection;
 
 public class CustomUserDetails implements UserDetails {
 
-    private UserEntity user;
+    private IdentityEntity user;
 
-    public CustomUserDetails(UserEntity user) {
+    public CustomUserDetails(IdentityEntity user) {
         this.user = user;
     }
 
@@ -49,8 +49,5 @@ public class CustomUserDetails implements UserDetails {
         return true;
     }
 
-    public String getFullName() {
-        return user.getFirstName() + " " + user.getLastName();
-    }
 
 }
