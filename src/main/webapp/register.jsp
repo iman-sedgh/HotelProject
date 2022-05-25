@@ -1,38 +1,68 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
-    <head>
-        <title>Registration</title>
-        <link href="<c:url value="/css/common.css"/>" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <h1>form</h1>
-        <form action="/register" method="POST" enctype="utf8">
-            <div>
-                <label>First Name</label>
-                <input name="firstName" type="text">
+<!DOCTYPE html>
+<html dir="rtl" lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<link href="images/favicon.png" rel="icon" />
+<title>ثبت نام در سایت</title>
+<meta name="description" content="Login and Register Form Html Template">
+<meta name="author" content="harnishdesign.net">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/all.min.css" />
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+<link id="color-switcher" type="text/css" rel="stylesheet" href="css/color-red.css" />
+</head>
+<body>
+<div class="preloader preloader-dark">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<div id="main-wrapper" class="oxyy-login-register">
+  <div class="hero-wrap min-vh-100">
+    <div class="hero-mask opacity-4 bg-secondary"></div>
+    <div class="hero-bg hero-bg-scroll" style="background-image:url('img/login-bg-5.jpg');"></div>
+    <div class="hero-content d-flex min-vh-100">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-md-9 col-lg-7 col-xl-5 mx-auto">
+            <div class="hero-wrap rounded shadow-lg p-4 py-sm-5 px-sm-5 my-4">
+              <div class="hero-mask opacity-9 bg-dark"></div>
+              <div class="hero-content">
+                <div class="logo mb-4"> <a class="d-flex justify-content-center" href="index.php" title="Oxyy"><img src="img/logo.png" alt="Oxyy"></a> </div>
+                <form class="form-dark" action="register-check.php" method="POST">
+                  <div class="form-group icon-group">
+                    <input type="text" name="fullname" class="form-control"   placeholder="نام کامل">
+                    <span class="icon-inside"><i class="fas fa-user"></i></span> </div>
+                  <div class="form-group icon-group">
+                    <input type="email" name="email" class="form-control"   placeholder="آدرس ایمیل">
+                    <span class="icon-inside"><i class="fas fa-envelope"></i></span> </div>
+                  <div class="form-group icon-group">
+                    <input type="password" name="password1" class="form-control"   placeholder="رمز عبور">
+                    <span class="icon-inside"><i class="fas fa-lock"></i></span> </div>
+                    <div class="form-group icon-group">
+                    <input type="password" name="password2" class="form-control"   placeholder="تکرار رمز عبور">
+                    <span class="icon-inside"><i class="fas fa-lock"></i></span> </div>
+                  <button class="btn btn-primary btn-block mt-4 mb-3" type="submit">ثبت نام</button>
+                  <p class="text-center text-muted text-2 mt-2 mb-0">شما قبول دارید<a class="btn-link text-light" href="#">قوانین</a> و <a class="btn-link text-light" href="#">سیاست حریم خصوصی</a></p>
+                </form>
+                <p class="text-2 text-muted text-center mb-0">حساب کاربری دارید؟ <a class="btn-link text-light text-3" href="/login">وارد شدن</a></p>
+              </div>
             </div>
-            <div>
-                <label>Last Name</label>
-                <input name="lastName" type="text">
-            </div>
-            <div>
-                <label>Email</label>
-                <input name="email" type="email">
-            </div>
-            <div>
-                <label>Username</label>
-                <input name="username" type="text">
-            </div>
-            <div>
-                <label>Password</label>
-                <input name="password" type="password">
-            </div>
-            <div>
-                <label>Matching Password</label>
-                <input name="matchingPassword" type="password">
-            </div>
-            <input type="submit" value="signup">
-        </form>
-    </body>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.bundle.min.js"></script> 
+<script src="js/switcher.min.js"></script> 
+<script src="js/theme.js"></script>
+</body>
 </html>

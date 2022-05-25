@@ -40,7 +40,7 @@ public class RoomController {
             room.setHotel(hotel);
             roomRepository.save(room);
 
-            model.addAttribute("hotel",room);
+            model.addAttribute("hotel",hotel);
         }catch (HotelNotFoundException e){
             model.addAttribute("message","Hotel not found!");
         }
