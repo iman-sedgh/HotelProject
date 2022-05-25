@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html dir="rtl" lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -49,7 +50,6 @@
                     <input type="password" name="password2" class="form-control"   placeholder="تکرار رمز عبور">
                     <span class="icon-inside"><i class="fas fa-lock"></i></span> </div>
                   <button class="btn btn-primary btn-block mt-4 mb-3" type="submit">ثبت نام</button>
-                  <p class="text-center text-muted text-2 mt-2 mb-0">شما قبول دارید<a class="btn-link text-light" href="#">قوانین</a> و <a class="btn-link text-light" href="#">سیاست حریم خصوصی</a></p>
                 </form>
                 <p class="text-2 text-muted text-center mb-0">حساب کاربری دارید؟ <a class="btn-link text-light text-3" href="/login">وارد شدن</a></p>
               </div>

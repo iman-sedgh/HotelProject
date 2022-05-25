@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
+
 @Controller
 public class RoomController {
 
@@ -36,8 +38,6 @@ public class RoomController {
             HotelEntity hotel = hotelRepository.findById(hotelId)
                     .orElseThrow(HotelNotFoundException::new);
             RoomEntity room = new RoomEntity(type,roomNumber,hotel);
-
-            room.setHotel(hotel);
             roomRepository.save(room);
 
             model.addAttribute("hotel",hotel);
