@@ -42,7 +42,11 @@ public class HotelEntity {
 
     @OneToMany
     @Getter @Setter
-    private List<StaffPositionEntity> staffPosition=new ArrayList<>();
+    private List<StaffPositionEntity> staffPositions=new ArrayList<>();
+
+    @OneToMany
+    @Getter @Setter
+    private List<StaffEntity> staffs=new ArrayList<>();
 
     public HotelEntity(){}
 }

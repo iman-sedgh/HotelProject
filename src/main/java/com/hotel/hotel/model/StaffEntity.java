@@ -47,6 +47,10 @@ public class StaffEntity {
     @Getter @Setter
     private StaffPositionEntity staffPosition;
 
+    @ManyToOne
+    @Getter @Setter
+    private HotelEntity hotel;
+
     //fk to pos
 
     public StaffEntity(String nationalCode) {
