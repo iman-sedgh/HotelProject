@@ -25,7 +25,7 @@
           <div class="rd-navbar-nav-wrap">
             <ul class="rd-navbar-nav">
               <li class="active"><a href="index.html">خانه</a> </li>
-              <li><a href="tours-grid.html">هتل ها</a>
+              <li><a href="/hotels">هتل ها</a>
                 <ul class="rd-navbar-dropdown">
                   <li><a href="tours-grid.html">پنج ستاره</a></li>
                   <li><a href="tours-grid-variant-2.html">چهار ستاره</a></li>
