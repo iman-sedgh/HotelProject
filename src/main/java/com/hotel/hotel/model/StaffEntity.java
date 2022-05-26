@@ -57,4 +57,8 @@ public class StaffEntity {
         this.nationalCode = nationalCode;
     }
     public StaffEntity(){}
+
+    public StaffEntity(String salary, String username, String familyName,
+                       String address, String nationalCode, String phoneNumber, HotelEntity hotel) {
+    }
 }
