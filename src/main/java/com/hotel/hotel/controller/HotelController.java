@@ -11,6 +11,7 @@ import com.hotel.hotel.repository.StaffPositionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,35 +35,31 @@ public class HotelController {
     }
     @GetMapping("/hotels")
     public String allHotels(Model model){
-        List<HotelDto> hotels = hotelRepository.findAll().stream().map(hotelEntity -> {
-            return HotelDto.builder()
-                    .id(hotelEntity.getId())
-                    .name(hotelEntity.getName())
-                    .city(hotelEntity.getCity())
-                    .address(hotelEntity.getAddress())
-                    .build();
-        }).toList();
+        List<HotelDto> hotels = hotelRepository.findAll().stream().map(hotelEntity -> HotelDto.builder()
+                .id(hotelEntity.getId())
+                .name(hotelEntity.getName())
+                .city(hotelEntity.getCity())
+                .address(hotelEntity.getAddress())
+                .build()).toList();
         model.addAttribute("hotels",hotels);
         return "/hotels.jsp";
     }
     @GetMapping("/hotels/city")
     public String allHotelsByCity(Model model,@RequestParam("city") String city){
-        List<HotelDto> hotels = hotelRepository.findAllByCity(city).stream().map(hotelEntity -> {
-            return HotelDto.builder()
-                    .id(hotelEntity.getId())
-                    .name(hotelEntity.getName())
-                    .city(hotelEntity.getCity())
-                    .address(hotelEntity.getAddress())
-                    .build();
-        }).toList();
+        List<HotelDto> hotels = hotelRepository.findAllByCity(city).stream().map(hotelEntity -> HotelDto.builder()
+                .id(hotelEntity.getId())
+                .name(hotelEntity.getName())
+                .city(hotelEntity.getCity())
+                .address(hotelEntity.getAddress())
+                .build()).toList();
         model.addAttribute("hotels",hotels);
         return "/hotels.jsp";
     }
-    @GetMapping("/hotels/create")
+    @GetMapping("/hotels/add")
     public String createHotelForm(Model model){
         return "/createHotelForm.jsp";
     }
-    @PostMapping("/hotels/create")
+    @PostMapping("/hotels/add")
     public String createHotel(@ModelAttribute("hotel") HotelEntity hotel,Model model){
         hotelRepository.save(hotel);
         model.addAttribute("hotel",hotel);

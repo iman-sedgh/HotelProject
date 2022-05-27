@@ -7,8 +7,14 @@
     </head>
     <body>
         <h1>add staff form</h1>
-        <form action="/hotel/staffs/add?hotelId=${hotelId}" method="post">
-            type: <input type="text" name="positionName">
+        <form action="/hotel/staffs/add?hotelId=${hotelId}" method="POST">
+            positionName: <input type="text" name="positionName"><br>
+            Salary: <input type="text" name="positionName"><br>
+            username: <input type="text" name="positionName"><br>
+            familyName: <input type="text" name="positionName"><br>
+            address: <input type="text" name="positionName"><br>
+            nationalCode: <input type="text" name="positionName"><br>
+            phoneNumber: <input type="text" name="positionName"><br>
             <input type="submit" value="Add">
         </form>
     </body>
