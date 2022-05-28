@@ -28,7 +28,7 @@ public class HotelController {
     public String index(Model model){
         try{
             Page<HotelEntity> recentHotels = hotelRepository.findAll(
-                    PageRequest.of(0,3, Sort.by(Sort.Direction.ASC, "id"))
+                    PageRequest.of(0,3, Sort.by(Sort.Direction.DESC, "id"))
             );
             model.addAttribute("recentHotels",recentHotels.iterator());
         }
@@ -38,9 +38,9 @@ public class HotelController {
 
 
     @GetMapping("/hotel")
-    public String hotelInfo(Model model, @RequestParam("id") int id){
+    public String hotelInfo(Model model, @RequestParam("hotelId") int hotelId){
         try {
-            HotelEntity hotelInfo = hotelRepository.findById(id)
+            HotelEntity hotelInfo = hotelRepository.findById(hotelId)
                     .orElseThrow(HotelNotFoundException::new);
             model.addAttribute("hotel",hotelInfo);
             return "hotelInformation.jsp";
