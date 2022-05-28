@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @Entity
@@ -45,11 +47,14 @@ public class HotelEntity {
 
     @OneToMany
     @Getter @Setter
-    private List<StaffPositionEntity> staffPositions=new ArrayList<>();
+    private List<StaffPositionEntity> staffPositions = new ArrayList<>();
 
     @OneToMany
     @Getter @Setter
-    private List<StaffEntity> staffs=new ArrayList<>();
+    private List<StaffEntity> staffs = new ArrayList<>();
+
+    @ElementCollection @Getter @Setter
+    private List<String> images = new ArrayList<>();
 
     public HotelEntity(){}
 }

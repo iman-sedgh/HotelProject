@@ -35,8 +35,8 @@
             <div class="hero-wrap rounded shadow-lg p-4 py-sm-5 px-sm-5 my-4">
               <div class="hero-mask opacity-9 bg-dark"></div>
               <div class="hero-content">
-                <div class="logo mb-4"> <a class="d-flex justify-content-center" href="index.php" title="Oxyy"><img src="img/logo.png" alt="Oxyy"></a> </div>
-                <form class="form-dark" action="/register" method="POST">
+                <div class="logo mb-4"> <a class="d-flex justify-content-center" href="/" title="Oxyy"><img src="img/logo.png" alt="Oxyy"></a> </div>
+                <form class="form-dark" action="/register" method="post">
                   <div class="form-group icon-group">
                     <input type="text" name="username" class="form-control"   placeholder="نام کاربری">
                     <span class="icon-inside"><i class="fas fa-user"></i></span> </div>

@@ -18,18 +18,18 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-//    @GetMapping("/register")
-//    public String showRegistrationForm(Model model) {
-//        UserDto userDto = new UserDto();
-//        model.addAttribute("user", userDto);
-//        return "register.jsp";
-//    }
+    @GetMapping("/register")
+    public String showRegistrationForm(Model model) {
+        UserDto userDto = new UserDto();
+        model.addAttribute("user", userDto);
+        return "register.jsp";
+    }
 
     @PostMapping("/register")
     public String registerUserAccount(@ModelAttribute("user") @Valid UserDto userDto,Model model) {
         try {
             userService.register(userDto);
-            return "/login";
+            return "login.jsp";
         } catch (EmailAlreadyExistException | UsernameAlreadyExistException uaeEx) {
             model.addAttribute("message", "An account for that username/email already exists.");
             model.addAttribute("user", userDto);

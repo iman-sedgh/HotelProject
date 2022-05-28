@@ -34,11 +34,11 @@
             <div class="hero-wrap rounded shadow-lg p-4 py-sm-5 px-sm-5 my-4">
               <div class="hero-mask opacity-9 bg-dark"></div>
               <div class="hero-content">
-                <div class="logo mb-4"> <a class="d-flex justify-content-center" href="index.html" title="Oxyy"><img src="img/logo.png" alt="Oxyy"></a> </div>
+                <div class="logo mb-4"> <a class="d-flex justify-content-center" href="/" title="Oxyy"><img src="img/logo.png" alt="Oxyy"></a> </div>
                 <form  class="form-dark" action="/login" method="post">
                   <div class="form-group icon-group">
                     <input type="text" name="username" class="form-control"  required placeholder="نام کاربری">
-                    <span class="icon-inside"><i class="fas fa-envelope"></i></span> </div>
+                    <span class="icon-inside"><i class="fas fa-user"></i></span> </div>
                   <div class="form-group icon-group">
                     <input type="password" name="password" class="form-control"  required placeholder="رمز عبور">
                     <span class="icon-inside"><i class="fas fa-lock"></i></span> </div>

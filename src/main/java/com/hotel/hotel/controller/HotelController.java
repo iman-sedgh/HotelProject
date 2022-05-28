@@ -3,26 +3,33 @@ package com.hotel.hotel.controller;
 import com.hotel.hotel.dto.HotelDto;
 import com.hotel.hotel.exception.HotelNotFoundException;
 import com.hotel.hotel.model.HotelEntity;
-import com.hotel.hotel.model.RoomEntity;
-import com.hotel.hotel.model.StaffPositionEntity;
 import com.hotel.hotel.repository.HotelRepository;
-import com.hotel.hotel.repository.RoomRepository;
-import com.hotel.hotel.repository.StaffPositionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Controller
 public class HotelController {
     @Autowired
     HotelRepository hotelRepository;
+
+    @Value("${hotel.files.path}")
+    private String filesPath;
+
+
 
     @GetMapping("/")
     public String index(Model model){
@@ -32,7 +39,7 @@ public class HotelController {
             );
             model.addAttribute("recentHotels",recentHotels.iterator());
         }
-        catch (Exception e){}
+        catch (Exception ignored){}
         return "index.jsp";
     }
 
@@ -76,9 +83,26 @@ public class HotelController {
         return "/createHotelForm.jsp";
     }
     @PostMapping("/hotels/add")
-    public String createHotel(@ModelAttribute("hotel") HotelEntity hotel,Model model){
+    public String createHotel(@ModelAttribute("hotel") HotelEntity hotel,
+                              @RequestParam("files") ArrayList<MultipartFile> files, Model model){
+        hotelRepository.save(hotel);
+
+        ArrayList<String> images = new ArrayList<>();
+        AtomicInteger count = new AtomicInteger();
+        files.forEach((file) -> {
+            try {
+                String path = "files/"+hotel.getId()+ count.get() +file.getOriginalFilename();
+                Files.write(Path.of(filesPath+path),file.getBytes());
+                images.add(path);
+                count.getAndIncrement();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        hotel.setImages(images);
         hotelRepository.save(hotel);
         model.addAttribute("hotel",hotel);
         return "/hotelInformation.jsp";
     }
+
 }

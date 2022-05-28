@@ -25,6 +25,9 @@
                 <span>${room.type}</span>
             </a>
         </c:forEach>
+        <c:forEach items="${hotel.images}" var="image">
+            <img src="/${image}" alt="image">
+        </c:forEach>
         <p><a href="/hotel/rooms/add?hotelId=${hotel.id}">add room</a></p>
         <br>
         <h1>Staffs</h1>

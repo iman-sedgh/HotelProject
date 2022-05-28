@@ -60,7 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .usernameParameter("username")
                 .loginPage("/login")
-                .defaultSuccessUrl("/hotels.jsp", true)
+                .defaultSuccessUrl("/home.jsp", true)
                 .permitAll()
                 .and()
                 .logout()
