@@ -41,6 +41,9 @@ public class HotelEntity {
     @Getter @Setter @Column(columnDefinition = "integer default 1")
     private int starNumber;
 
+    @Getter @Setter
+    private String owner;
+
     @OneToMany
     @Getter @Setter
     private List<RoomEntity> rooms = new ArrayList<>();

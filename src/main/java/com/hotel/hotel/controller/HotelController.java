@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -83,8 +84,9 @@ public class HotelController {
         return "/createHotelForm.jsp";
     }
     @PostMapping("/hotels/add")
-    public String createHotel(@ModelAttribute("hotel") HotelEntity hotel,
+    public String createHotel(@ModelAttribute("hotel") HotelEntity hotel, Principal principal,
                               @RequestParam("files") ArrayList<MultipartFile> files, Model model){
+        hotel.setOwner(principal.getName());
         hotelRepository.save(hotel);
 
         ArrayList<String> images = new ArrayList<>();
