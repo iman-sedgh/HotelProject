@@ -28,6 +28,12 @@ public class RoomEntity {
     @Getter @Setter
     private int roomNumber;
 
+    @Getter @Setter
+    private int price;
+
+    @Getter @Setter
+    private int weekendPrice;
+    
     @ManyToOne
     @Getter @Setter
     private HotelEntity hotel;
