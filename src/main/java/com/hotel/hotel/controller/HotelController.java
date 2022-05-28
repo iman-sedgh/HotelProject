@@ -80,7 +80,8 @@ public class HotelController {
         return "/hotels.jsp";
     }
     @GetMapping("/hotels/add")
-    public String createHotelForm(Model model){
+    public String createHotelForm(Model model,Principal principal){
+        model.addAttribute("username",principal.getName());
         return "/createHotelForm.jsp";
     }
     @PostMapping("/hotels/add")
