@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="css/css.css?family=Lato:400,400i,700,700i,900,900i">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/rtl.css">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 </head>
 <body>
 <div class="page text-center">
@@ -197,70 +198,33 @@
           <p></p>
         </div>
         <div class="range range-xs-center offset-top-45">
-
-
+    <c:forEach items="${recentHotels}" var="recentHotel">
 		<div class="cell-sm-5 cell-md-4 offset-top-30">
-            <div data-wow-delay=".2s" class="box-offer wow fadeInLeft">
-              <div class="box-offer-img-wrap"><a href="tours-single.html"><img src="images/370x310.jpg" width="370" height="310" alt="" class="img-responsive center-block"></a></div>
-              <div class="box-offer-caption text-right">
-                <div class="pull-right">
-                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">هتل پارس</a></div>
-                </div>
-                <div class="pull-left">
-                  <div class="box-offer-price text-gray-base">2 میلیون تومان</div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="offset-top-8 offset-xs-top-0">
-                  <ul class="list-inline list-inline-13 list-inline-marked text-silver-chalice text-small">
-                    <li>10 روز</li>
-                    <li class="pull-left">تهران، مشهد، شیراز</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="cell-sm-5 cell-md-4 offset-top-30">
             <div data-wow-delay=".2s" class="box-offer wow bounceIn">
               <div class="box-offer-img-wrap"><a href="tours-single.html"><img src="images/370x310.jpg" width="370" height="310" alt="" class="img-responsive center-block"></a></div>
               <div class="box-offer-caption text-right">
                 <div class="pull-right">
-                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">هتل پارس</a></div>
+                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">${recentHotel.name}</a></div>
                 </div>
                 <div class="pull-left">
-                  <div class="box-offer-price text-gray-base">2 میلیون تومان</div>
+                  <div class="box-offer-price text-gray-base">
+                    <c:forEach var = "i" begin ="1" end ="${recentHotel.starNumber}">
+                    <b style="color:orange"> ✫</b>
+                    </c:forEach>
+                  </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="offset-top-8 offset-xs-top-0">
                   <ul class="list-inline list-inline-13 list-inline-marked text-silver-chalice text-small">
-                    <li>10 روز</li>
-                    <li class="pull-left">تهران، مشهد، شیراز</li>
+                    <li>${recentHotel.floorNumber} طبقه</li>
+                    <li class="pull-left">${recentHotel.city}</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
+    </c:forEach>
 
-          <div class="cell-sm-5 cell-md-4 offset-top-30">
-            <div data-wow-delay=".2s" class="box-offer wow fadeInRight">
-              <div class="box-offer-img-wrap"><a href="tours-single.html"><img src="images/370x310.jpg" width="370" height="310" alt="" class="img-responsive center-block"></a></div>
-              <div class="box-offer-caption text-right">
-                <div class="pull-right">
-                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">هتل پارس</a></div>
-                </div>
-                <div class="pull-left">
-                  <div class="box-offer-price text-gray-base">2 میلیون تومان</div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="offset-top-8 offset-xs-top-0">
-                  <ul class="list-inline list-inline-13 list-inline-marked text-silver-chalice text-small">
-                    <li>10 روز</li>
-                    <li class="pull-left">تهران، مشهد، شیراز</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
 
         </div>
         <div class="offset-top-50"><a href="tours-grid.html" class="btn btn-primary">View ALL TOURs</a></div>

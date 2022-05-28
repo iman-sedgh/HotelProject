@@ -9,6 +9,9 @@ import com.hotel.hotel.repository.HotelRepository;
 import com.hotel.hotel.repository.RoomRepository;
 import com.hotel.hotel.repository.StaffPositionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.MissingServletRequestParameterException;
@@ -20,6 +23,19 @@ import java.util.List;
 public class HotelController {
     @Autowired
     HotelRepository hotelRepository;
+
+    @GetMapping("/")
+    public String index(Model model){
+        try{
+            Page<HotelEntity> recentHotels = hotelRepository.findAll(
+                    PageRequest.of(0,3, Sort.by(Sort.Direction.ASC, "id"))
+            );
+            model.addAttribute("recentHotels",recentHotels.iterator());
+        }
+        catch (Exception e){}
+        return "index.jsp";
+    }
+
 
     @GetMapping("/hotel")
     public String hotelInfo(Model model, @RequestParam("id") int id){
