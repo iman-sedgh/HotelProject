@@ -17,12 +17,12 @@
 
             Summary: <input name="summary" type="text"><br>
 
-            Description: <input name="description" type="text"><br>
+            Description: <input name="description" type="textarea"><br>
 
             RoomNumber: <input name="roomNumber" type="number"><br>
 
             FloorNumber: <input name="floorNumber" type="number"><br>
-
+            StarNumbers: <input name="starNumber" type="number" min="1" max="5"> <br>
             <input type="submit" value="Create">
         </form>
     </body>

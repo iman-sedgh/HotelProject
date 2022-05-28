@@ -28,7 +28,7 @@
         <p><a href="/hotel/rooms/add?hotelId=${hotel.id}">add room</a></p>
         <br>
         <h1>Staffs</h1>
-        <c:forEach items="${hotel.staffPosition}" var="staff">
+        <c:forEach items="${hotel.staffs}" var="staff">
             <a href="/hotel/staffs/remove?hotelId=${hotel.id}&staffId=${staff.id}">
                 <span>${staff.positionName}</span>
             </a>
