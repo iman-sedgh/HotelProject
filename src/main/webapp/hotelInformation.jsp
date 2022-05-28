@@ -37,5 +37,6 @@
             </a>
         </c:forEach>
         <p><a href="/hotel/staffs/add?hotelId=${hotel.id}">add staff</a></p>
+        <p><a href="/user/hotels">تمام هتل های شما</a></p>
     </body>
 </html>

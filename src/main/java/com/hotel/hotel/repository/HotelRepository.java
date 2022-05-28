@@ -7,5 +7,6 @@ import java.util.Collection;
 
 public interface HotelRepository extends JpaRepository<HotelEntity,Integer> {
     Collection<HotelEntity> findAllByCity(String city);
+    Collection<HotelEntity> findAllByOwner(String username);
     HotelEntity findFirstByOrderByIdDesc();
 }
