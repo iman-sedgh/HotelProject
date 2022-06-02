@@ -96,7 +96,7 @@
                                 <td><a href="">${hotel.roomNumber}</a></td>
                                 <td>
                                     <a href="" class="item-delete mlg-15" title="حذف"></a>
-                                    <a href="" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
+                                    <a href="/hotel?hotelId=${hotel.id}" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
                                     <a href="" class="item-edit " title="ویرایش"></a>
                                 </td>
                             </tr>
