@@ -2,7 +2,6 @@ package com.hotel.hotel.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.extern.apachecommons.CommonsLog;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -19,14 +18,14 @@ public class StaffEntity {
     @Id
     @Getter @Setter
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private Integer id;
 
     @Getter @Setter @Column(nullable = false)
     private double salary;
 
     @Size(max = 20)
     @Getter @Setter @Column(nullable = false)
-    private String username;
+    private String name;
 
     @Size(max = 20)
     @Getter @Setter @Column(name = "family_name", nullable = false)
@@ -56,9 +55,14 @@ public class StaffEntity {
     public StaffEntity(String nationalCode) {
         this.nationalCode = nationalCode;
     }
+
+    public StaffEntity(int id) {
+        this.id = id;
+    }
+
     public StaffEntity(){}
 
-    public StaffEntity(String salary, String username, String familyName,
+    public StaffEntity(String salary, String name, String familyName,
                        String address, String nationalCode, String phoneNumber, HotelEntity hotel) {
     }
 }
