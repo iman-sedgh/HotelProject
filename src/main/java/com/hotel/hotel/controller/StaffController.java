@@ -31,14 +31,16 @@ public class StaffController {
 
     @GetMapping("/hotel/staffs/add")
     public String addStaffForm(@RequestParam("hotelId") int hotelId, Model model){
+
+        model.addAttribute("hotelId",hotelId);
         return "/addStaffForm.jsp";
     }
 
     @PostMapping("/hotel/staffs/add")
     public String addStaff(Model model,
-                          @RequestBody StaffEntity staff,
-                          @RequestBody int hotelId,
-                          @RequestBody String positionName){
+                          @ModelAttribute("staff") StaffEntity staff,
+                          @RequestParam("hotelId") int hotelId,
+                          @ModelAttribute("positionName") String positionName){
         try {
             HotelEntity hotel = hotelRepository.findById(hotelId)
                     .orElseThrow(HotelNotFoundException::new);
