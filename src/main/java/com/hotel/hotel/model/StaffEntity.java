@@ -21,7 +21,7 @@ public class StaffEntity {
     private Integer id;
 
     @Getter @Setter @Column(nullable = false)
-    private double salary;
+    private float salary;
 
     @Size(max = 20)
     @Getter @Setter @Column(nullable = false)

@@ -90,9 +90,12 @@ public class StaffController {
     @GetMapping("/hotel/staffs/remove")
     public String removeRoom(Model model,
                              @RequestParam("hotelId") int hotelId,
-                             @RequestParam("staffId") int staffId){
+                             @RequestParam("staffId") int staffId,
+                             @RequestParam("staffPositionId") int staffPositionId){
         staffRepository.deleteById(staffId);
-        return "/hotel?hotelId="+hotelId;
+        staffPositionRepository.deleteById(staffPositionId);
+        hotelRepository.deleteById(hotelId);
+        return "/hotel/staffs?hotelId=${hotel.id}";
     }
 }
 

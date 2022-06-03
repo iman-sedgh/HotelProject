@@ -67,56 +67,8 @@
                 <li><a href="/user/hotels" class="is-active">${hotel.name}</a></li>
             </ul>
         </div>
-        <div class="main-content">
-                <div class="bg-white padding-20">
-                    <div class="t-header-search">
-                        <form action="" onclick="event.preventDefault();">
-                            <div class="t-header-searchbox font-size-13">
-                                <div type="text" class="text search-input__box ">جستجوی هتل</div>
-                                <div class="t-header-search-content ">
-                                    <input type="text"  class="text"  placeholder="نام هتل">
-                                    <input type="text"  class="text" placeholder="شهر">
-                                    <input type="number"  class="text" placeholder="تعداد اتاق">
-                                    <input type="number"  class="text" placeholder="تعداد طبقه">
-                                    <input type="number"  class="text margin-bottom-20" placeholder="تعداد ستاره">
-                                    <btutton class="btn btn-netcopy_net">جستجو</btutton>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="table__box">
-                    <table class="table">
-
-                        <thead role="rowgroup">
-                        <tr role="row" class="title-row">
-                            <th>نام</th>
-                            <th>تعداد ستاره</th>
-                            <th>شهر</th>
-                            <th>تعداد طبقات</th>
-                            <th>تعداد اتاق ها</th>
-                            <th>عملیات</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach items="${hotels}" var="hotel">
-                            <tr role="row" >
-                                <td><a href="">${hotel.name}</a></td>
-                                <td><a href="">${hotel.starNumber}</a></td>
-                                <td><a href="">${hotel.city}</a></td>
-                                <td><a href="">${hotel.floorNumber}</a></td>
-                                <td><a href="">${hotel.roomNumber}</a></td>
-                                <td>
-                                    <a href="" class="item-delete mlg-15" title="حذف"></a>
-                                    <a href="/hotel?hotelId=${hotel.id}" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
-                                    <a href="" class="item-edit " title="ویرایش"></a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
-                </div>
             </div>
+
     </div>
 </body>
 <script src="/js/jquery-3.4.1.min.js"></script>
