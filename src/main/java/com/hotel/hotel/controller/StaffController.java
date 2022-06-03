@@ -77,7 +77,7 @@ public class StaffController {
 
 
             model.addAttribute("hotel",hotel);
-          
+
         }catch (HotelNotFoundException e){
             model.addAttribute("message","Hotel not found!");
         } catch (StaffNotFoundException e) {
