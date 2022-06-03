@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0;">
-    <title>اضافه کردن کارمند</title>
+    <title>لیست کارمند</title>
     <link rel="stylesheet" href="/css/adminPanelStyle.css">
     <link rel="stylesheet" href="/css/responsive_991.css" media="(max-width:991px)">
     <link rel="stylesheet" href="/css/responsive_768.css" media="(max-width:768px)">
@@ -21,7 +21,6 @@
                 <div class="v-dialog__container" style="display: block;"></div>
                 <div class="box__camera default__avatar"></div>
             </div>
-            <span class="profile__name">کاربر : ${username}</span>
         </div>
 
         <ul>
@@ -37,7 +36,7 @@
             </div>
             <div class="header__left d-flex flex-end item-center margin-top-2">
                 <div class="notification margin-15">
-                    <a claszs="notification__icon"></a>
+                    <a class="notification__icon"></a>
                     <div class="dropdown__notification">
                         <div class="content__notification">
 
@@ -61,6 +60,7 @@
                         <tr role="row" class="title-row">
                             <th>نام</th>
                             <th>نام خانوادگی</th>
+                            <th>رده کاری</th>
                             <th>آدرس</th>
                             <th>کد ملی</th>
                             <th>شماره تلفن</th>
@@ -70,14 +70,15 @@
                         <tbody>
                         <c:forEach items="${hotel.staffs}" var="staff">
                             <tr role="row" >
-                                <td><a href="">${staff.name}</a></td>
-                                <td><a href="">${staff.familyName}</a></td>
-                                <td><a href="">${staff.address}</a></td>
-                                <td><a href="">${staff.nationalCode}</a></td>
-                                <td><a href="">${staff.phoneNumber}</a></td>
-                                <td><a href="">${staff.salary}ریال</a></td>
+                                <td><a>${staff.name}</a></td>
+                                <td><a>${staff.familyName}</a></td>
+                                <td><a>${staff.staffPosition.positionName}</a></td>
+                                <td><a>${staff.address}</a></td>
+                                <td><a>${staff.nationalCode}</a></td>
+                                <td><a>${staff.phoneNumber}</a></td>
+                                <td><a>${staff.salary}ریال</a></td>
                                 <td>
-                                    <a href="/hotel/staffs/remove?hotelId=${hotel.id}&staffId=${staff.id}&staffPositionId=${staffPosition.id}" class="item-delete mlg-15" title="حذف"></a>
+                                    <a href="/hotel/staffs/remove?hotelId=${hotel.id}&staffId=${staff.id}" class="item-delete mlg-15" title="حذف"></a>
                                     <a href="/hotel?hotelId=${hotel.id}" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
                                     <a href="" class="item-edit " title="ویرایش"></a>
                                 </td>

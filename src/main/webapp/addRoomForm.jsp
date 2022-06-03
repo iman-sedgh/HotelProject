@@ -7,9 +7,11 @@
     </head>
     <body>
         <h1>add room form</h1>
-        <form action="/hotel/rooms/add?hotelId=${hotelId}" method="POST">
-            type: <input type="text" name="type"><br>
+        <form action="" method="POST">
+
             room number : <input type="text" name="roomNumber"><br>
+            type: <input type="text" name="type"><br>
+
             <input type="submit" value="Add">
         </form>
     </body>

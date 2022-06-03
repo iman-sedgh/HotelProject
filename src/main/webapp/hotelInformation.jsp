@@ -25,7 +25,6 @@
                 <div class="v-dialog__container" style="display: block;"></div>
                 <div class="box__camera default__avatar"></div>
             </div>
-            <span class="profile__name">کاربر : ${username}</span>
         </div>
 
         <ul>
@@ -34,6 +33,8 @@
             <li class="item-li i-categories"><a href="/hotel/staffs?hotelId=${hotel.id}">کارمندان هتل</a></li>
                         <li class="item-li i-users"><a href="/hotel/staffs/add?hotelId=${hotel.id}">اضافه کردن کارمند</a></li>
             <li class="item-li i-categories"><a href="/hotel/rooms?hotelId=${hotel.id}">اتاق های هتل</a></li>
+                                    <li class="item-li i-users"><a href="/hotel/rooms/add?hotelId=${hotel.id}">اضافه کردن اتاق</a></li>
+
             <br>
             <br>
             <br>
@@ -51,7 +52,7 @@
             </div>
             <div class="header__left d-flex flex-end item-center margin-top-2">
                 <div class="notification margin-15">
-                    <a claszs="notification__icon"></a>
+                    <a class="notification__icon"></a>
                     <div class="dropdown__notification">
                         <div class="content__notification">
 
@@ -67,6 +68,10 @@
                 <li><a href="/user/hotels" class="is-active">${hotel.name}</a></li>
             </ul>
         </div>
+        <br>
+        <br>
+        <h3>درباره هتل ${hotel.name} بیشتر بدانید!</h3><br>
+        <p>${hotel.description}</p>
             </div>
 
     </div>

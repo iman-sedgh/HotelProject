@@ -24,6 +24,17 @@ public class RoomController {
     @Autowired
     HotelRepository hotelRepository;
 
+    @GetMapping("/hotel/rooms")
+    public String RoomList(@RequestParam("hotelId") int hotelId, Model model){
+
+        try {
+            model.addAttribute("hotel",hotelRepository.findById(hotelId).orElseThrow(HotelNotFoundException::new));
+        } catch (HotelNotFoundException e) {
+            model.addAttribute("message","Hotel not found!");
+        }
+        return "/roomList.jsp";
+    }
+
     @GetMapping("/hotel/rooms/add")
     public String addRoomForm(@RequestParam("hotelId") int hotelId, Model model){
 
@@ -42,13 +53,14 @@ public class RoomController {
             if(room.getId()==null){
                 room.setHotel(hotel);
                 roomRepository.save(room);
+                hotelRepository.save(hotel);
             }
 
             model.addAttribute("hotel",hotel);
         }catch (HotelNotFoundException e){
             model.addAttribute("message","Hotel not found!");
         }
-        return "/hotelInformation.jsp";
+        return "/roomList.jsp";
     }
 
     @GetMapping("/hotel/rooms/remove")

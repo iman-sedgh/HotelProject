@@ -27,7 +27,6 @@
         <ul>
             <li class="item-li i-dashboard is-active"><a href="/user/hotels">هتل های شما</a></li>
             <li class="item-li i-categories"><a href="/hotels/add">ساختن هتل</a></li>
-            <li class="item-li i-users"><a href="/staffs">کارمندان</a></li>
         </ul>
 
     </div>
@@ -39,7 +38,7 @@
             </div>
             <div class="header__left d-flex flex-end item-center margin-top-2">
                 <div class="notification margin-15">
-                    <a claszs="notification__icon"></a>
+                    <a class="notification__icon"></a>
                     <div class="dropdown__notification">
                         <div class="content__notification">
 
