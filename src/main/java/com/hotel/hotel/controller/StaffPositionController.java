@@ -23,26 +23,28 @@ public class StaffPositionController {
 
 
     @GetMapping("/hotel/positions/add")
-    public String addStaffPositionForm(){
-        return "/addPositionForm.jsp";
+    public String addStaffPositionForm(Model model, @RequestParam ("hotelId") int hotelId){
+
+        model.addAttribute("hotelId",hotelId);
+        return "/addStaffForm.jsp";
     }
 
     @PostMapping("/hotel/positions/add")
     public String addPosition(Model model,
                            @RequestParam("hotelId") int hotelId,
-                           @ModelAttribute("name") String name){
+                           @ModelAttribute("staffPosition") StaffPositionEntity staffPosition){
         try {
-            StaffPositionEntity staff = new StaffPositionEntity(name);
             HotelEntity hotel = hotelRepository.findById(hotelId)
                     .orElseThrow(HotelNotFoundException::new);
 
-            staff.setHotel(hotel);
-            staffPositionRepository.save(staff);
+            staffPosition.setHotel(hotel);
+            staffPositionRepository.save(staffPosition);
+
             model.addAttribute("hotel",hotel);
         }catch (HotelNotFoundException e){
             model.addAttribute("message","Hotel not found!");
         }
-        return "/hotelInformation.jsp";
+        return "/staffList.jsp";
     }
 
     @GetMapping("/hotel/positions/remove")

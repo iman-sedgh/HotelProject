@@ -36,34 +36,56 @@ public class StaffController {
         return "/addStaffForm.jsp";
     }
 
+    @GetMapping("/hotel/staffs")
+    public String staffList(@RequestParam("hotelId") int hotelId, Model model){
+
+        try {
+            model.addAttribute("hotel",hotelRepository.findById(hotelId).orElseThrow(HotelNotFoundException::new));
+        } catch (HotelNotFoundException e) {
+            model.addAttribute("message","Hotel not found!");
+        }
+        return "/staffList.jsp";
+    }
     @PostMapping("/hotel/staffs/add")
     public String addStaff(Model model,
                           @ModelAttribute("staff") StaffEntity staff,
                           @RequestParam("hotelId") int hotelId,
                           @ModelAttribute("positionName") String positionName){
+
         try {
             HotelEntity hotel = hotelRepository.findById(hotelId)
                     .orElseThrow(HotelNotFoundException::new);
             StaffPositionEntity staffPosition = staffPositionRepository.findByPositionName(positionName)
-                    .orElseThrow(StaffNotFoundException::new);
+                    .or(()->{
+                        StaffPositionEntity newStaffPosition=new StaffPositionEntity(positionName);
+                        staffPositionRepository.save(newStaffPosition);
+                        hotel.getStaffPositions().add(newStaffPosition);
+                        hotelRepository.save(hotel);
+                        return java.util.Optional.of(newStaffPosition);
 
 
-          if(staff.getId()==null){
-                staff.setHotel(hotel);
-                staff.setStaffPosition(staffPosition);
-                staffRepository.save(staff);
-            }
+                    }).orElseThrow(StaffNotFoundException::new);
+
+
+          if(staff.getId()==null) {
+              staff.setHotel(hotel);
+              staff.setStaffPosition(staffPosition);
+              staffRepository.save(staff);
+              hotel.getStaffs().add(staff);
+              hotelRepository.save(hotel);
+          }
+
 
             model.addAttribute("hotel",hotel);
+          
         }catch (HotelNotFoundException e){
             model.addAttribute("message","Hotel not found!");
         } catch (StaffNotFoundException e) {
             model.addAttribute("message","Staff Position not found!");
         }
-        return "/hotelInformation.jsp";
+        return "/staffList.jsp";
     }
 
-    @ManyToOne
 
     @GetMapping("/hotel/staffs/remove")
     public String removeRoom(Model model,
