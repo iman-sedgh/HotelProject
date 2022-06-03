@@ -26,19 +26,23 @@ public class RoomController {
 
     @GetMapping("/hotel/rooms/add")
     public String addRoomForm(@RequestParam("hotelId") int hotelId, Model model){
+
+        model.addAttribute("hotelId",hotelId);
         return "/addRoomForm.jsp";
     }
 
     @PostMapping("/hotel/rooms/add")
     public String addRoom(Model model,
                           @ModelAttribute("hotelId") int hotelId,
-                          @ModelAttribute("type") String type,
-                          @ModelAttribute("roomNumber") int roomNumber){
+                          @ModelAttribute("room") RoomEntity room){
         try {
             HotelEntity hotel = hotelRepository.findById(hotelId)
                     .orElseThrow(HotelNotFoundException::new);
-            RoomEntity room = new RoomEntity(type,roomNumber,hotel);
-            roomRepository.save(room);
+
+            if(room.getId()==null){
+                room.setHotel(hotel);
+                roomRepository.save(room);
+            }
 
             model.addAttribute("hotel",hotel);
         }catch (HotelNotFoundException e){

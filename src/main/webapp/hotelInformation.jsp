@@ -8,17 +8,7 @@
     <body>
         <h1> Welcome to ${hotel.name}</h1>
         <p><h2> Room type </h2>${room.type}</p>
-       <p> <h2> Reserve</h2>
-        <c:choose>
-            <c:when test="${room.reserved==true}">
-                otagh reserv shode
-                <br />
-            </c:when>
-            <c:otherwise>
-               otagh reserve nashode
-                <br />
-            </c:otherwise>
-        </c:choose> </p>
+
         <h1>Rooms</h1>
         <c:forEach items="${hotel.rooms}" var="room">
             <a href="/hotel/rooms/remove?hotelId=${hotel.id}&roomId=${room.id}">
@@ -36,6 +26,8 @@
                 <span>${staff.positionName}</span>
             </a>
         </c:forEach>
+        <p><a href="/hotel/staffs/add?hotelId=${hotel.id}">add staff</a></p>
+                <p><a href="/user/hotels"> کارمندان شما</a></p>
         <p><a href="/hotel/staffs/add?hotelId=${hotel.id}">add staff</a></p>
         <p><a href="/user/hotels">تمام هتل های شما</a></p>
     </body>

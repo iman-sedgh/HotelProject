@@ -12,7 +12,7 @@ public class RoomEntity {
     @Id
     @Getter @Setter
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private Integer id;
 
     @Getter @Setter
     private String type;
@@ -40,7 +40,7 @@ public class RoomEntity {
 
     public RoomEntity addReservation(ReservationEntity reservation){
         this.reservations.add(reservation);
-        HashMap<String,Date> hMap = new HashMap<String,Date>();
+        HashMap<String,Date> hMap = new HashMap<>();
         hMap.put("start",reservation.getCheckInDT());
         hMap.put("end",reservation.getCheckOutDT());
 
