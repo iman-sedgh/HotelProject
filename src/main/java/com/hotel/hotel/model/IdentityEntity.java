@@ -34,7 +34,7 @@ public class IdentityEntity {
 
     public IdentityEntity(){}
 
-    public IdentityEntity(String firstName, String lastName, String username, String email, String password){
+    public IdentityEntity(String username, String email, String password){
         this.email = email;
         this.username = username;
         this.password = password;
