@@ -13,7 +13,7 @@ public class StaffPositionEntity {
     @Id
     @Getter @Setter
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private Integer id;
 
     @Getter @Setter
     private String positionName;

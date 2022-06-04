@@ -40,7 +40,7 @@
             <div class="header__left d-flex flex-end item-center margin-top-2">
 
                 <div class="notification margin-15">
-                    <a claszs="notification__icon"></a>
+                    <a class="notification__icon"></a>
                     <div class="dropdown__notification">
                         <div class="content__notification">
 

@@ -47,14 +47,14 @@ public class HotelController {
 
     @GetMapping("/hotel")
     public String hotelInfo(Model model, @RequestParam("hotelId") int hotelId){
-        try {
-            HotelEntity hotelInfo = hotelRepository.findById(hotelId)
-                    .orElseThrow(HotelNotFoundException::new);
-            model.addAttribute("hotel",hotelInfo);
+       try {
+         HotelEntity hotelInfo = hotelRepository.findById(hotelId)
+                 .orElseThrow(HotelNotFoundException::new);
+           model.addAttribute("hotel",hotelInfo);
             return "hotelInformation.jsp";
-        }catch (HotelNotFoundException e){
-            model.addAttribute("message","Hotel not found!");
-            return "hotelInformation.jsp";
+       }catch (HotelNotFoundException e){
+           model.addAttribute("message","Hotel not found!");
+           return "hotelInformation.jsp";
         }
     }
     @GetMapping("/hotels")

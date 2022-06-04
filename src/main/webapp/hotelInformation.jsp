@@ -1,42 +1,83 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
-    <head>
-        <title>Hotel Information</title>
-        <link href="<c:url value="/css/common.css"/>" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <h1> Welcome to ${hotel.name}</h1>
-        <p><h2> Room type </h2>${room.type}</p>
-       <p> <h2> Reserve</h2>
-        <c:choose>
-            <c:when test="${room.reserved==true}">
-                otagh reserv shode
-                <br />
-            </c:when>
-            <c:otherwise>
-               otagh reserve nashode
-                <br />
-            </c:otherwise>
-        </c:choose> </p>
-        <h1>Rooms</h1>
-        <c:forEach items="${hotel.rooms}" var="room">
-            <a href="/hotel/rooms/remove?hotelId=${hotel.id}&roomId=${room.id}">
-                <span>${room.type}</span>
-            </a>
-        </c:forEach>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+    <title>طلاعات هتل</title>
+    <link rel="stylesheet" href="/css/adminPanelStyle.css">
+    <link rel="stylesheet" href="/css/responsive_991.css" media="(max-width:991px)">
+    <link rel="stylesheet" href="/css/responsive_768.css" media="(max-width:768px)">
+    <link rel="stylesheet" href="/css/font.css">
+</head>
+<body>
+<h1> Welcome to ${hotel.name}</h1>
         <c:forEach items="${hotel.images}" var="image">
-            <img src="/${image}" alt="image">
-        </c:forEach>
-        <p><a href="/hotel/rooms/add?hotelId=${hotel.id}">add room</a></p>
+                    <img src="/${image}" alt="image">
+                </c:forEach>
+    <div class="sidebar__nav border-top border-left  ">
+        <span class="bars d-none padding-0-18"></span>
+        <a class="header__logo  d-none" href="/"></a>
+        <div class="profile__info border cursor-pointer text-center">
+            <div class="avatar__img"><img style="top10px;" src="/img/pro.jpg" class="avatar___img">
+                <input name="images" type="file" accept="image/*" class="hidden avatar-img__input" multiple>
+                <div class="v-dialog__container" style="display: block;"></div>
+                <div class="box__camera default__avatar"></div>
+            </div>
+        </div>
+
+        <ul>
+            <li class="item-li i-dashboard is-active"><a href="/hotel?hotelId=${hotel.id}">اطلاعات هتل</a></li>
+
+            <li class="item-li i-categories"><a href="/hotel/staffs?hotelId=${hotel.id}">کارمندان هتل</a></li>
+                        <li class="item-li i-users"><a href="/hotel/staffs/add?hotelId=${hotel.id}">اضافه کردن کارمند</a></li>
+            <li class="item-li i-categories"><a href="/hotel/rooms?hotelId=${hotel.id}">اتاق های هتل</a></li>
+                                    <li class="item-li i-users"><a href="/hotel/rooms/add?hotelId=${hotel.id}">اضافه کردن اتاق</a></li>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <li class="item-li i-dashboard is-active"><a href="/user/hotels">همه هتل های شما</a></li>
+
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header d-flex item-center bg-white width-100 border-bottom padding-12-30">
+            <div class="header__right d-flex flex-grow-1 item-center">
+                <span class="bars"></span>
+                <a class="header__logo" href="/"></a>
+            </div>
+            <div class="header__left d-flex flex-end item-center margin-top-2">
+                <div class="notification margin-15">
+                    <a class="notification__icon"></a>
+                    <div class="dropdown__notification">
+                        <div class="content__notification">
+
+                        </div>
+                    </div>
+                </div>
+                <a href="/login" class="logout" title="خروج"></a>
+            </div>
+        </div>
+        <div class="breadcrumb">
+            <ul>
+                <li><a href="/home.jsp">ادمین پنل</a></li>
+                <li><a href="/user/hotels" class="is-active">${hotel.name}</a></li>
+            </ul>
+        </div>
         <br>
-        <h1>Staffs</h1>
-        <c:forEach items="${hotel.staffs}" var="staff">
-            <a href="/hotel/staffs/remove?hotelId=${hotel.id}&staffId=${staff.id}">
-                <span>${staff.positionName}</span>
-            </a>
-        </c:forEach>
-        <p><a href="/hotel/staffs/add?hotelId=${hotel.id}">add staff</a></p>
-        <p><a href="/user/hotels">تمام هتل های شما</a></p>
-    </body>
+        <br>
+        <h3>درباره هتل ${hotel.name} بیشتر بدانید!</h3><br>
+        <p>${hotel.description}</p>
+            </div>
+
+    </div>
+</body>
+<script src="/js/jquery-3.4.1.min.js"></script>
+<script src="/js/js.js"></script>
 </html>
+
+
