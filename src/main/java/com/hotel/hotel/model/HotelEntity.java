@@ -52,7 +52,7 @@ public class HotelEntity {
     @Getter @Setter
     private List<StaffPositionEntity> staffPositions = new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
     @Getter @Setter
     private List<StaffEntity> staffs = new ArrayList<>();
 

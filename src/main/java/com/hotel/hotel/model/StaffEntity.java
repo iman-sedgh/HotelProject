@@ -47,6 +47,7 @@ public class StaffEntity {
     private StaffPositionEntity staffPosition;
 
     @ManyToOne
+    @JoinColumn(name = "staffs_id")
     @Getter @Setter
     private HotelEntity hotel;
 

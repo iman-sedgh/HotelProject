@@ -25,6 +25,9 @@
 
         <ul>
            <li class="item-li i-dashboard is-active"><a href="/hotel?hotelId=${hotel.id}">اطلاعات هتل</a></li>
+           <br>
+                                   <li class="item-li i-users"><a href="/hotel/staffs/add?hotelId=${hotel.id}">اضافه کردن کارمند</a></li>
+
         </ul>
 
     </div>
@@ -78,7 +81,7 @@
                                 <td><a>${staff.phoneNumber}</a></td>
                                 <td><a>${staff.salary}ریال</a></td>
                                 <td>
-                                    <a href="/hotel/staffs/remove?hotelId=${hotel.id}&staffId=${staff.id}" class="item-delete mlg-15" title="حذف"></a>
+                                    <a href="/hotel/staffs/remove?staffId=${staff.id}&hotelId=${hotel.id}" class="item-delete mlg-15" title="حذف"></a>
                                     <a href="/hotel?hotelId=${hotel.id}" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
                                     <a href="" class="item-edit " title="ویرایش"></a>
                                 </td>
