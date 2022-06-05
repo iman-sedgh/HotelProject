@@ -88,14 +88,6 @@ public class StaffController {
         return "/staffList.jsp";
     }
 
-
-    //    @GetMapping("/hotel/staffs/remove")
-//    public String removeStaff(Model model,
-//                             @RequestParam("hotelId") int hotelId,
-//                             @RequestParam("staffId") int staffId){
-//        staffRepository.deleteById(staffId);
-//        return "/hotel/staffs?hotelId=${hotel.id}";
-//    }
     @GetMapping("/hotel/staffs/remove")
     public String removeStaff(@RequestParam("staffId") int staffId,
                               @RequestParam("hotelId") int hotelId,

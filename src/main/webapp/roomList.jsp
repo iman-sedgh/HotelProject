@@ -7,10 +7,13 @@
     </head>
     <body>
         <h1>add room form</h1>
-        <form action="" method="POST">
-            room number : <input type="text" name="roomNumber"><br>
-            type: <input type="text" name="type"><br>
-            <input type="submit" value="Add">
-        </form>
+ <c:forEach items="${hotel.rooms}" var="room">
+
+            ${room.type}
+            </a>
+        </c:forEach>
+                        <c:forEach items="${hotel.rooms}" var="room">
+<a>${room.roomNumber}</a>
+</c:forEach>
     </body>
 </html>
