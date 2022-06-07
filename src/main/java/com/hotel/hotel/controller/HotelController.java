@@ -51,6 +51,19 @@ public class HotelController {
          HotelEntity hotelInfo = hotelRepository.findById(hotelId)
                  .orElseThrow(HotelNotFoundException::new);
            model.addAttribute("hotel",hotelInfo);
+            return "singlehotel.jsp";
+       }catch (HotelNotFoundException e){
+           model.addAttribute("message","Hotel not found!");
+           return "singlehotel.jsp";
+        }
+    }
+
+    @GetMapping("/panel/hotel")
+    public String panelHotel(Model model, @RequestParam("hotelId") int hotelId){
+       try {
+         HotelEntity hotelInfo = hotelRepository.findById(hotelId)
+                 .orElseThrow(HotelNotFoundException::new);
+           model.addAttribute("hotel",hotelInfo);
             return "hotelInformation.jsp";
        }catch (HotelNotFoundException e){
            model.addAttribute("message","Hotel not found!");
