@@ -50,14 +50,13 @@ public class RoomController {
             HotelEntity hotel = hotelRepository.findById(hotelId)
                     .orElseThrow(HotelNotFoundException::new);
 
-
             if(room.getId()==null){
                 room.setHotel(hotel);
                 roomRepository.save(room);
                 hotel.getRooms().add(room);
                 hotelRepository.save(hotel);
             }
-            model.addAttribute("room",room);
+
             model.addAttribute("hotel",hotel);
         }catch (HotelNotFoundException e){
             model.addAttribute("message","Hotel not found!");
