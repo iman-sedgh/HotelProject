@@ -7,10 +7,14 @@
     </head>
     <body>
         <h1>add room form</h1>
-        <form action="" method="POST">
-            room number : <input type="text" name="roomNumber"><br>
-            type: <input type="text" name="type"><br>
-            <input type="submit" value="Add">
+        <form action="/hotel/rooms/add?hotelId=${hotelId}" method="POST">
+            <input class="text" placeholder="شماره اتاق" name="roomNumber" type="number" min="1"><br>
+            <br>
+            <input class="text" placeholder="تعداد خواب" name="type" type="number" min="1"><br>
+            <br>
+            <input class="text" placeholder="هزینه اتاق" name="price" type="number" min="1"><br>
+            <br>
+            <input type="submit" value="ثبت اتاق">
         </form>
     </body>
 </html>

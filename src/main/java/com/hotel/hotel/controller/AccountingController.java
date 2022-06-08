@@ -48,11 +48,11 @@ public class AccountingController {
             HotelEntity hotel = hotelRepository.findById(hotelId)
                     .orElseThrow(HotelNotFoundException::new);
 
-            if(accounting.getId()==null){
-                accounting.setHotel(hotel);
-                accountingRepository.save(accounting);
-                hotelRepository.save(hotel);
-            }
+//            if(accounting.getId()==null){
+//                accounting.setHotel(hotel);
+//                accountingRepository.save(accounting);
+//                hotelRepository.save(hotel);
+//            }
 
             model.addAttribute("hotel",hotel);
             model.addAttribute("accounting",accounting);

@@ -70,9 +70,9 @@
                     <input class="text" placeholder="نام هتل" name="name">
                     <input class="text" placeholder="شهر" name="city">
                     <input class="text" placeholder="آدرس هتل" name="address">
-                    <input class="text" placeholder="تعداد اتاق" name="roomNumber" type="number">
-                    <input class="text" placeholder="تعداد طبقه" name="floorNumber" type="number">
-                    <input class="text" placeholder="چند ستاره" name="floorNumber" type="number" min="1" max="5">
+                    <input class="text" placeholder="تعداد اتاق" name="roomNumber" type="number" min="1">
+                    <input class="text" placeholder="تعداد طبقه" name="floorNumber" type="number" min="1">
+                    <input class="text" placeholder="چند ستاره" name="starNumber" type="number" min="1" max="5">
                     <input class="text" placeholder="درباره هتل" name="summery">
                     <textarea class="text" placeholder="توضیحات هتل" name="description"></textarea>
                     <br>

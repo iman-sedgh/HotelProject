@@ -65,10 +65,13 @@ public class RoomController {
     }
 
     @GetMapping("/hotel/rooms/remove")
-    public String removeRoom(Model model,
-                             @RequestParam("hotelId") int hotelId,
-                             @RequestParam("roomId") int roomId){
+    public String removeRoom(@RequestParam("roomId") int roomId,
+                              @RequestParam("hotelId") int hotelId,
+                              Model model) {
+
+        model.addAttribute("roomId", roomId);
+        model.addAttribute("hotelId",hotelId);
         roomRepository.deleteById(roomId);
-        return "/hotel?hotelId="+hotelId;
+        return "/hotel/rooms?hotelId="+hotelId;
     }
 }

@@ -41,6 +41,10 @@ public class AccountingEntity {
     }
 
     public AccountingEntity() {}
+
+    public AccountingEntity(Integer id) {
+        this.id = id;
+    }
 }
 
 

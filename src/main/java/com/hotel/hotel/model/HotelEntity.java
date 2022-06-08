@@ -44,11 +44,11 @@ public class HotelEntity {
     @Getter @Setter
     private String owner;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @Getter @Setter
     private AccountingEntity accounting =new AccountingEntity();
 
-    @OneToMany
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
     @Getter @Setter
     private List<RoomEntity> rooms = new ArrayList<>();
 

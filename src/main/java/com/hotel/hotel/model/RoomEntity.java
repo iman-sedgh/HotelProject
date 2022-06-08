@@ -35,6 +35,7 @@ public class RoomEntity {
     private int weekendPrice;
     
     @ManyToOne
+    @JoinColumn(name = "rooms_id")
     @Getter @Setter
     private HotelEntity hotel;
 
