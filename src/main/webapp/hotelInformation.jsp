@@ -28,12 +28,14 @@
         </div>
 
         <ul>
-            <li class="item-li i-dashboard is-active"><a href="/hotel?hotelId=${hotel.id}">اطلاعات هتل</a></li>
+            <li class="item-li i-dashboard is-active"><a href="/panel/hotel?hotelId=${hotel.id}">اطلاعات هتل</a></li>
 
             <li class="item-li i-categories"><a href="/hotel/staffs?hotelId=${hotel.id}">کارمندان هتل</a></li>
                         <li class="item-li i-users"><a href="/hotel/staffs/add?hotelId=${hotel.id}">اضافه کردن کارمند</a></li>
             <li class="item-li i-categories"><a href="/hotel/rooms?hotelId=${hotel.id}">اتاق های هتل</a></li>
                                     <li class="item-li i-users"><a href="/hotel/rooms/add?hotelId=${hotel.id}">اضافه کردن اتاق</a></li>
+            <li class="item-li i-categories"><a href="/hotel/accounting?hotelId=${hotel.id}">اطلاعات مالی هتل</a></li>
+
 
             <br>
             <br>

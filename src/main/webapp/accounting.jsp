@@ -6,11 +6,17 @@
         <link href="<c:url value="/css/common.css"/>" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>add room form</h1>
-        <form action="/hotel/rooms/add?hotelId=${hotelId}" method="POST">
-            room number : <input type="text" name="roomNumber"><br>
-            type: <input type="text" name="type"><br>
-            <input type="submit" value="Add">
-        </form>
+        <h1>مجموع درآمد کارکنان</h1>
+
+<c:set var="total" value="${0}"/>
+<c:forEach var="staff" items="${hotel.staffs}">
+    <c:set var="total" value="${total + staff.salary}" />
+</c:forEach>
+<a>${total}ریال</a>
+
+        <h1>درآمد هتل </h1>
+
+
+
     </body>
 </html>

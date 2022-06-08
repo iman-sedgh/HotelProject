@@ -24,7 +24,7 @@
         </div>
 
         <ul>
-           <li class="item-li i-dashboard is-active"><a href="/hotel?hotelId=${hotel.id}">اطلاعات هتل</a></li>
+           <li class="item-li i-dashboard is-active"><a href="/panel/hotel?hotelId=${hotel.id}">اطلاعات هتل</a></li>
            <br>
                                    <li class="item-li i-users"><a href="/hotel/staffs/add?hotelId=${hotel.id}">اضافه کردن کارمند</a></li>
 

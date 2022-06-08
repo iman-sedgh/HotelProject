@@ -26,10 +26,11 @@ public class AccountingEntity {
 
 
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "Accounting_id")
     @Getter @Setter
     private HotelEntity hotel;
+
 
     public AccountingEntity(Integer id, long salary, long reserve_money,
                             HotelEntity hotel) {

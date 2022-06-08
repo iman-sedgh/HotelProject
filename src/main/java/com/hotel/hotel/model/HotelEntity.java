@@ -44,6 +44,10 @@ public class HotelEntity {
     @Getter @Setter
     private String owner;
 
+    @OneToOne
+    @Getter @Setter
+    private AccountingEntity accounting =new AccountingEntity();
+
     @OneToMany
     @Getter @Setter
     private List<RoomEntity> rooms = new ArrayList<>();

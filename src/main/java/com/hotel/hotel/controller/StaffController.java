@@ -3,19 +3,15 @@ package com.hotel.hotel.controller;
 import com.hotel.hotel.exception.HotelNotFoundException;
 import com.hotel.hotel.exception.StaffNotFoundException;
 import com.hotel.hotel.model.HotelEntity;
-import com.hotel.hotel.model.RoomEntity;
 import com.hotel.hotel.model.StaffEntity;
 import com.hotel.hotel.model.StaffPositionEntity;
 import com.hotel.hotel.repository.HotelRepository;
 import com.hotel.hotel.repository.StaffPositionRepository;
 import com.hotel.hotel.repository.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.persistence.ManyToOne;
 
 @Controller
 public class StaffController {
