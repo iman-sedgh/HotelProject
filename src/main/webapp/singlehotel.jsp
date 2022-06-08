@@ -37,7 +37,7 @@
                         </div>
                         <div class="rd-navbar-nav-wrap">
                             <ul class="rd-navbar-nav">
-                                <li class="active"><a href="index.html">خانه</a> </li>
+                                <li class="active"><a href="index.jsp">خانه</a> </li>
                                 <li><a href="/hotels">هتل ها</a>
                                     <ul class="rd-navbar-dropdown">
                                         <li><a href="tours-grid.html">پنج ستاره</a></li>

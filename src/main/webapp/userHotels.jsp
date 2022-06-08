@@ -94,9 +94,8 @@
                                 <td><a href="">${hotel.floorNumber}</a></td>
                                 <td><a href="">${hotel.roomNumber}</a></td>
                                 <td>
-                                    <a href="" class="item-delete mlg-15" title="حذف"></a>
-                                    <a href="/hotel?hotelId=${hotel.id}" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
-                                    <a href="/panel/hotel?hotelId=${hotel.id}" class="item-edit " title="ویرایش"></a>
+                                    <a href="/hotel?hotelId=${hotel.id}" target="_blank" class="item-eye mlg-15" title=" مشاهده صفحه هتل"></a>
+                                    <a href="/panel/hotel?hotelId=${hotel.id}" class="item-edit " title= "مشاهده و ویرایش اطلاعات هتل"></a>
                                 </td>
                             </tr>
                         </c:forEach>
