@@ -27,14 +27,14 @@
             <ul class="rd-navbar-nav">
               <li class="active"><a href="index.jsp">خانه</a> </li>
               <li><a href="/hotels">هتل ها</a>
-                <ul class="rd-navbar-dropdown">
-                  <li><a href="tours-grid.html">پنج ستاره</a></li>
-                  <li><a href="tours-grid-variant-2.html">چهار ستاره</a></li>
-                  <li><a href="tours-list.html">سه ستاره</a></li>
-                  <li><a href="tours-single.html">دو ستاره</a></li>
-                </ul>
+                 <ul class="rd-navbar-dropdown">
+                                <li><a href="tours-grid.html">پنج ستاره</a></li>
+                                <li><a href="tours-grid-variant-2.html">چهار ستاره</a></li>
+                                <li><a href="tours-list.html">سه ستاره</a></li>
+                                <li><a href="tours-single.html">دو ستاره</a></li>
+                              </ul>
               </li>
-              <li><a href="about.html">درباره ما</a>
+              <li><a href="about.jsp">درباره ما</a>
               </li>
               <li><a href="/login">ورود</a></li>
               <li><a href="/register">ثبت نام</a></li>
@@ -138,10 +138,10 @@
                       </div>
                       <div class="unit-body offset-top-4 offset-xs-top-0">
                         <div>
-                          <p class="text-small text-gray-base text-uppercase text-ubold">24/7 support</p>
+                          <p class="text-small text-gray-base text-uppercase text-ubold">24/7 پشتیبانی</p>
                         </div>
                         <div class="offset-top-4">
-                          <p class="text-small text-silver-chalice">Our travel agents are always there to support you during your trip.</p>
+                          <p class="text-small text-silver-chalice">در طول سفر همراه شما هستیم</p>
                         </div>
                       </div>
                     </div>
@@ -155,10 +155,10 @@
                       </div>
                       <div class="unit-body offset-top-4 offset-xs-top-0">
                         <div>
-                          <p class="text-small text-gray-base text-uppercase text-ubold">Handpicked Hotels</p>
+                          <p class="text-small text-gray-base text-uppercase text-ubold">انتخاب دلخواه هتل ها</p>
                         </div>
                         <div class="offset-top-4">
-                          <p class="text-small text-silver-chalice">We pick the hotels with the utmost reputation and positive reviews.</p>
+                          <p class="text-small text-silver-chalice">انتخاب ما بهترین هتل ها برای شماست.</p>
                         </div>
                       </div>
                     </div>
@@ -172,10 +172,10 @@
                       </div>
                       <div class="unit-body offset-top-4 offset-xs-top-0">
                         <div>
-                          <p class="text-small text-gray-base text-uppercase text-ubold">highly qualified service</p>
+                          <p class="text-small text-gray-base text-uppercase text-ubold">سرویس قدرتمند هتل</p>
                         </div>
                         <div class="offset-top-4">
-                          <p class="text-small text-silver-chalice">Our high level of service is officially recognized by thousands of clients.</p>
+                          <p class="text-small text-silver-chalice">تلاش ما رضایت حداکثری شما از هتل های موجود است.</p>
                         </div>
                       </div>
                     </div>
@@ -198,7 +198,7 @@
           <p></p>
         </div>
         <div class="range range-xs-center offset-top-45">
-    <c:forEach items="${recentHotels}" var="recentHotel">
+    <c:forEach items="${hotel}" var="hotel">
 		<div class="cell-sm-5 cell-md-4 offset-top-30">
             <div data-wow-delay=".2s" class="box-offer wow bounceIn">
               <div class="box-offer-img-wrap"><a href="tours-single.html"><img src="images/370x310.jpg" width="370" height="310" alt="" class="img-responsive center-block"></a></div>
@@ -208,7 +208,7 @@
                 </div>
                 <div class="pull-left">
                   <div class="box-offer-price text-gray-base">
-                    <c:forEach var = "i" begin ="1" end ="${recentHotel.starNumber}">
+                    <c:forEach var = "i" begin ="1" end ="${hotel.starNumber}">
                     <b style="color:orange"> ✫</b>
                     </c:forEach>
                   </div>
@@ -227,7 +227,7 @@
 
 
         </div>
-        <div class="offset-top-50"><a href="tours-grid.html" class="btn btn-primary">View ALL TOURs</a></div>
+        <div class="offset-top-50"><a href="/hotels" class="btn btn-primary">نمایش همه هتل ها</a></div>
       </div>
     </section>
 
@@ -238,13 +238,13 @@
       <div class="range range-xs-center">
         <div class="cell-sm-8 cell-md-12">
           <div class="range range-xs-center">
-            <div class="cell-sm-6 cell-md-3 cell-lg-4 cell-md-push-1"><a href="index.html"><img  height="60" src="images/logo-dark-299x60.png" alt=""></a>
+            <div class="cell-sm-6 cell-md-3 cell-lg-4 cell-md-push-1"><a href="index.jsp"><img  height="60" src="images/logo-dark-299x60.png" alt=""></a>
               <div class="offset-top-20 inset-lg-right-80">
                 <p class="text-small ">سامانه مدیریت هتل در حدود ۲ ماه توسط تیم ۳ نفره با استفاده از زبان برنامه نویسی جاوا و فریمورک اسپرینگ نوشته شده است</p>
               </div>
             </div>
             <div class="cell-sm-6 cell-md-3 cell-lg-2 cell-md-push-4">
-              <p class="text-big text-gray-base">Follow Us</p>
+              <p class="text-big text-gray-base">ما را دنبال کنید</p>
               <div class="offset-top-20">
                 <ul class="list-inline">
                   <li class="text-center"><a href="#" class="icon icon-square icon-filled-gallery fa fa-facebook-f text-gray"></a></li>
@@ -268,19 +268,19 @@
                             <div class="cell-sm-6">
                               <div class="modal-body-column-content">
                                 <div>
-                                  <h5 class="text-ubold">Subscribe to <br class="veil reveal-lg-inline-block">
+                                  <h5 class="text-ubold">ما را در خبرنامه دنبال کنید<br class="veil reveal-lg-inline-block">
                                     our newsletter</h5>
                                 </div>
                                 <div class="offset-top-15">
-                                  <p class="text-italic text-small text-gray-base">Subscribe and <code class="text-ubold">get 5% off</code> on your first tour!</p>
+                                  <p class="text-italic text-small text-gray-base">Subscribe and <code class="text-ubold">برای اولین سفر از ما تخفیف دریافت کنید!</code></p>
                                 </div>
                                 <div class="offset-top-35">
                                   <form data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php" class="rd-mailform rd-mailform-subscribe">
                                     <div class="form-group form-group-xs">
-                                      <label for="contact-email" class="form-label">Enter Your email here...</label>
+                                      <label for="contact-email" class="form-label">ایمیل خود را وارد نمایید</label>
                                       <input id="contact-email" type="email" name="email" data-constraints="@Email @Required" class="form-control">
                                     </div>
-                                    <button type="submit" class="btn btn-block btn-primary">SUBSCRIBE</button>
+                                    <button type="submit" class="btn btn-block btn-primary">ما را دنبال کنید!</button>
                                   </form>
                                 </div>
                                 <div class="offset-top-35">
@@ -302,7 +302,7 @@
               </div>
             </div>
             <div class="cell-xs-8 cell-sm-12 cell-md-6 offset-top-40 offset-md-top-0 cell-md-push-2">
-              <p class="text-big text-gray-base">Our Contacts</p>
+              <p class="text-big text-gray-base">ارتباط با ما</p>
               <div class="offset-top-8 offset-sm-top-20">
                 <address class="contact-info text-left">
                   <div class="range range-xs-center">
@@ -339,18 +339,18 @@
       </div>
       <div class="range range-xs-center range-sm-justify offset-top-8">
         <div class="cell-sm-5 cell-md-4 text-sm-left">
-          <p class="text-extra-small">Copyright &#169; <span id="copyright-year"></span> Travel & Tourism. All Rights Reserved.</p>
+          <p class="text-extra-small">Copyright &#169; <span id="copyright-year"></span>این سایت دارای قوانین کپی رایت می باشد.</p>
         </div>
         <div class="cell-sm-5 cell-md-4 text-sm-right offset-top-0">
           <ul class="list-inline list-inline-8">
             <li>
-              <p class="text-extra-small"><a href="privacy.html" class="text-gray">Privacy Policy</a></p>
+              <p class="text-extra-small"><a href="privacy.html" class="text-gray">حریم خصوصی</a></p>
             </li>
             <li>
-              <p class="text-extra-small"><a href="terms-of-use.html" class="text-gray">Terms of Use</a></p>
+              <p class="text-extra-small"><a href="terms-of-use.html" class="text-gray">قوانین</a></p>
             </li>
             <li>
-              <p class="text-extra-small"><a href="contacts.html" class="text-gray">Contact Support</a></p>
+              <p class="text-extra-small"><a href="about.jsp" class="text-gray">ارتباط با ما</a></p>
             </li>
           </ul>
         </div>

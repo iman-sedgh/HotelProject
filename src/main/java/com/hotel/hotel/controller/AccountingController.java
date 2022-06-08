@@ -3,11 +3,8 @@ package com.hotel.hotel.controller;
 import com.hotel.hotel.exception.HotelNotFoundException;
 import com.hotel.hotel.model.AccountingEntity;
 import com.hotel.hotel.model.HotelEntity;
-import com.hotel.hotel.model.RoomEntity;
-import com.hotel.hotel.model.StaffEntity;
 import com.hotel.hotel.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,11 +45,11 @@ public class AccountingController {
             HotelEntity hotel = hotelRepository.findById(hotelId)
                     .orElseThrow(HotelNotFoundException::new);
 
-//            if(accounting.getId()==null){
-//                accounting.setHotel(hotel);
-//                accountingRepository.save(accounting);
-//                hotelRepository.save(hotel);
-//            }
+            if(accounting.getId()==null){
+                accounting.setHotel(hotel);
+                accountingRepository.save(accounting);
+                hotelRepository.save(hotel);
+            }
 
             model.addAttribute("hotel",hotel);
             model.addAttribute("accounting",accounting);
