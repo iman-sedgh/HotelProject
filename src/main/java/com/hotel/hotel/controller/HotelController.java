@@ -41,7 +41,7 @@ public class HotelController {
             model.addAttribute("recentHotels",recentHotels.iterator());
         }
         catch (Exception ignored){}
-        return "index.jsp";
+        return "/index.jsp";
     }
 
 
@@ -51,10 +51,10 @@ public class HotelController {
          HotelEntity hotelInfo = hotelRepository.findById(hotelId)
                  .orElseThrow(HotelNotFoundException::new);
            model.addAttribute("hotel",hotelInfo);
-            return "singlehotel.jsp";
+            return "/singlehotel.jsp";
        }catch (HotelNotFoundException e){
            model.addAttribute("message","Hotel not found!");
-           return "singlehotel.jsp";
+           return "/singlehotel.jsp";
         }
     }
 
@@ -64,10 +64,10 @@ public class HotelController {
          HotelEntity hotelInfo = hotelRepository.findById(hotelId)
                  .orElseThrow(HotelNotFoundException::new);
            model.addAttribute("hotel",hotelInfo);
-           return "hotelInformation.jsp";
+           return "/hotelInformation.jsp";
        }catch (HotelNotFoundException e){
            model.addAttribute("message","Hotel not found!");
-           return "hotelInformation.jsp";
+           return "/hotelInformation.jsp";
         }
     }
     @GetMapping("/hotels")
