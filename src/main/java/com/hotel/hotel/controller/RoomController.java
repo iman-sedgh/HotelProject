@@ -54,6 +54,7 @@ public class RoomController {
             if(room.getId()==null){
                 room.setHotel(hotel);
                 roomRepository.save(room);
+                hotel.getRooms().add(room);
                 hotelRepository.save(hotel);
             }
             model.addAttribute("room",room);
