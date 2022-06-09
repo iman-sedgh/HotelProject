@@ -201,39 +201,119 @@
         <div>
           <h3>هتل های منتخب</h3>
         </div>
-        <div class="offset-top-10">
-          <p></p>
-        </div>
-        <div class="range range-xs-center offset-top-45">
-    <c:forEach items="${hotel}" var="hotel">
-		<div class="cell-sm-5 cell-md-4 offset-top-30">
-            <div data-wow-delay=".2s" class="box-offer wow bounceIn">
-              <div class="box-offer-img-wrap"><a href="tours-single.html"><img src="images/370x310.jpg" width="370" height="310" alt="" class="img-responsive center-block"></a></div>
-              <div class="box-offer-caption text-right">
-                <div class="pull-right">
-                  <div class="box-offer-title text-ubold"><a href="tours-single.html" class="text-gray-base">${recentHotel.name}</a></div>
+        <section class="packages" id="packages">
+
+
+            <div class="box-container">
+
+                <div class="box">
+                    <img src="images/p-1.jpg" alt="">
+                    <div class="content">
+                        <h3> <i class="fas fa-map-marker-alt"></i> بمبئی </h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="price"> $90.00 <span>$120.00</span> </div>
+                        <a href="#" class="btn">الان رزرو کن</a>
+                    </div>
                 </div>
-                <div class="pull-left">
-                  <div class="box-offer-price text-gray-base">
-                    <c:forEach var = "i" begin ="1" end ="${hotel.starNumber}">
-                    <b style="color:orange"> ✫</b>
-                    </c:forEach>
-                  </div>
+
+                <div class="box">
+                    <img src="images/p-2.jpg" alt="">
+                    <div class="content">
+                        <h3> <i class="fas fa-map-marker-alt"></i> هاوایی </h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="price"> $90.00 <span>$120.00</span> </div>
+                        <a href="#" class="btn">الان رزرو کن</a>
+                    </div>
                 </div>
-                <div class="clearfix"></div>
-                <div class="offset-top-8 offset-xs-top-0">
-                  <ul class="list-inline list-inline-13 list-inline-marked text-silver-chalice text-small">
-                    <li>${recentHotel.floorNumber} طبقه</li>
-                    <li class="pull-left">${recentHotel.city}</li>
-                  </ul>
+
+                <div class="box">
+                    <img src="images/p-3.jpg" alt="">
+                    <div class="content">
+                        <h3> <i class="fas fa-map-marker-alt"></i> سیدنی </h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="price"> $90.00 <span>$120.00</span> </div>
+                        <a href="#" class="btn">الان رزرو کن</a>
+                    </div>
                 </div>
-              </div>
+
+                <div class="box">
+                    <img src="images/p-4.jpg" alt="">
+                    <div class="content">
+                        <h3> <i class="fas fa-map-marker-alt"></i> پاریس </h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="price"> $90.00 <span>$120.00</span> </div>
+                        <a href="#" class="btn">الان رزرو کن</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="images/p-5.jpg" alt="">
+                    <div class="content">
+                        <h3> <i class="fas fa-map-marker-alt"></i> توکیو </h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="price"> $90.00 <span>$120.00</span> </div>
+                        <a href="#" class="btn">الان رزرو کن</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="images/p-6.jpg" alt="">
+                    <div class="content">
+                        <h3> <i class="fas fa-map-marker-alt"></i> مصر </h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="price"> $90.00 <span>$120.00</span> </div>
+                        <a href="#" class="btn">الان رزرو کن</a>
+                    </div>
+                </div>
+
             </div>
-          </div>
-    </c:forEach>
 
-
-        </div>
+        </section>
         <div class="offset-top-50"><a href="/hotels" class="btn btn-primary">نمایش همه هتل ها</a></div>
       </div>
     </section>
