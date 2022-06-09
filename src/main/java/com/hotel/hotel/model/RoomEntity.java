@@ -31,9 +31,6 @@ public class RoomEntity {
     @Getter @Setter
     private int price;
 
-    @Getter @Setter
-    private int weekendPrice;
-    
     @ManyToOne
     @JoinColumn(name = "rooms_id")
     @Getter @Setter
