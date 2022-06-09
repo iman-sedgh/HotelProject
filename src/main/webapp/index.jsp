@@ -44,12 +44,21 @@
         </div>
       </nav>
     </div>
+
+
     <div data-height="" data-min-height="400px" data-simulate-touch="false" data-slide-effect="fade" class="swiper-container swiper-slider">
-      <div class="swiper-wrapper">
-        <div data-slide-bg="images/1920x900.jpg" class="swiper-slide"></div>
-        <div data-slide-bg="images/1920x900.jpg" class="swiper-slide"></div>
-        <div data-slide-bg="images/1920x900.jpg" class="swiper-slide"></div>
-      </div>
+
+        <div class="controls">
+                  <span class="vid-btn active" data-src="images/vid-1.mp4"></span>
+                  <span class="vid-btn" data-src="images/vid-2.mp4"></span>
+                  <span class="vid-btn" data-src="images/vid-3.mp4"></span>
+                  <span class="vid-btn" data-src="images/vid-5.mp4"></span>
+              </div>
+
+              <div class="video-container">
+                  <video src="images/vid-1.mp4" id="video-slider" loop autoplay muted></video>
+              </div>
+
       <div class="swiper-caption-absolute">
         <div class="shell">
           <div class="range range-xs-center">
@@ -64,9 +73,7 @@
           </div>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"><span class="icon icon-xxs icon-circle icon-filled-white mdi mdi-chevron-left text-gray"></span></div>
-      <div class="swiper-button-next"><span class="icon icon-xxs icon-circle icon-filled-white mdi mdi-chevron-right text-gray"></span></div>
+
     </div>
   </header>
   <main class="page-content">

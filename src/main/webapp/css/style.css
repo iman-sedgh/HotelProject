@@ -1,4 +1,7 @@
 @charset "UTF-8";
+:root{
+  --orange:#ffa500;
+}
 /**
 * Template Style
 *
@@ -30881,3 +30884,40 @@ html .page footer .offset-top-110 {
 @media (max-width: 767px) { 
 	.rd-parallax-layer[data-url]{max-height:377px;}
 	}
+
+
+
+    .video-container video{
+      position: absolute;
+      top:0; left: 0;
+      z-index: -1;
+      height: 100%;
+      width:100%;
+      object-fit: cover;
+    }
+
+.controls {
+    padding: 1rem;
+    border-radius: 30rem;
+    background: rgba(0,0,0,.7);
+    position: relative;
+      top: 90%;
+
+
+
+
+    }
+
+.controls .vid-btn{
+  height:2rem;
+  width:2rem;
+  display: inline-block;
+  border-radius: 50%;
+  background:#fff;
+  cursor: pointer;
+  margin:0 .5rem;
+}
+
+.controls .vid-btn.active{
+  background:var(--orange);
+}

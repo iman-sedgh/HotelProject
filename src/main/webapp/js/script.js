@@ -4,6 +4,17 @@ Author: the philip team
 Version: 1.2.1
 */
 "use strict";
+
+        let videoBtn = document.querySelectorAll('.vid-btn');
+        videoBtn.forEach(btn =>{
+                btn.addEventListener('click', ()=>{
+                    document.querySelector('.controls .active').classList.remove('active');
+                    btn.classList.add('active');
+                    let src = btn.getAttribute('data-src');
+                    document.querySelector('#video-slider').src = src;
+                });
+            });
+
 var userAgent = navigator.userAgent.toLowerCase(),
     initialDate = new Date(),
     $document = $(document),
@@ -67,7 +78,9 @@ var userAgent = navigator.userAgent.toLowerCase(),
         search: $(".rd-search"),
         searchResults: $('.rd-search-results'),
         imgZoom: $('[mag-thumb]')
+
     };
+
 $document.ready(function() {
     function getSwiperHeight(object, attr) {
         var val = object.attr("data-" + attr),
