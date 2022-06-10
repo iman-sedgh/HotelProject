@@ -92,7 +92,7 @@ public class StaffController {
         model.addAttribute("staffId", staffId);
         model.addAttribute("hotelId",hotelId);
         staffRepository.deleteById(staffId);
-        return "/hotel/staffs?hotelId="+hotelId;
+        return "/hotel/staffs";
     }
 }
 
