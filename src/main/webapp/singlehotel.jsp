@@ -84,15 +84,19 @@
                 <div class="shell">
                     <div class="range range-xs-center">
                         <div class="cell-md-10 cell-lg-12">
-                            <div class="box box-lg box-single-post bg-white reveal-block">
-                                <h4 class="text-ubold">توضیحات ${hotel.name}</h4>
-                                <div class="offset-top-35 text-silver-chalice text-small">
+                            <div class="text-center box box-lg box-single-post bg-white reveal-block">
+                                <h4 class="row text-ubold">توضیحات ${hotel.name}</h4>
+                                <div class="row offset-top-35 text-silver-chalice text-small">
                                     <p>
                                     ${hotel.description}
                                     </p>
                                 </div><br><hr><br>
                                 <h3> رزرواسیون</h3>
-
+                                <form action="/hotel/reserving/setTime?id=${hotel.id}" method="post">
+                                    <div class="m-3"> شروع: <input type="date" name="start"> <br> </div>
+                                    <div class="m-3"> پایان: <input type="date" name="end"> <br> </div>
+                                    <input value="جستجو" type="submit">
+                                </form>
                             </div>
                             <div class="offset-top-60">
                                 <hr class="hr bg-alto">

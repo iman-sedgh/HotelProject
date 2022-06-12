@@ -14,8 +14,8 @@
 <body>
 <h1> Welcome to ${hotel.name}</h1>
         <c:forEach items="${hotel.images}" var="image">
-                    <img src="/${image}" alt="image">
-                </c:forEach>
+            <img src="/${image}" alt="image">
+        </c:forEach>
     <div class="sidebar__nav border-top border-left  ">
         <span class="bars d-none padding-0-18"></span>
         <a class="header__logo  d-none" href="/"></a>
