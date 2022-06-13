@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿          <!DOCTYPE html>
 <html lang="en" class="wide smoothscroll">
 <head>
 <title>Vacation Travel</title>
@@ -205,111 +205,23 @@
 
 
             <div class="box-container">
-
+            $(recentHotel)
+            <c:forEach items="${recentHotels}" var="recentHotel">
                 <div class="box">
-                    <img src="images/p-1.jpg" alt="">
+                    <img src="images/$(recentHotel.images)" alt="$(recentHotel.name)">
                     <div class="content">
-                        <h3> <i class="fas fa-map-marker-alt"></i> بمبئی </h3>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
+                        <h3> <i class="fas fa-map-marker-alt"></i> $(recentHotel.name) هتل </h3>
+                        <p>$(recentHotel.description)</p>
                         <div class="stars">
+                         <c:forEach var = "i" begin ="1" end ="${recentHotel.starNumber}">
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
+                         </c:forEach>
                         </div>
-                        <div class="price"> $90.00 <span>$120.00</span> </div>
+                        <div class="price"> <span>طبقه $(recentHotel.floorNumber)</span> </div>
                         <a href="#" class="btn">الان رزرو کن</a>
                     </div>
                 </div>
-
-                <div class="box">
-                    <img src="images/p-2.jpg" alt="">
-                    <div class="content">
-                        <h3> <i class="fas fa-map-marker-alt"></i> هاوایی </h3>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="price"> $90.00 <span>$120.00</span> </div>
-                        <a href="#" class="btn">الان رزرو کن</a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/p-3.jpg" alt="">
-                    <div class="content">
-                        <h3> <i class="fas fa-map-marker-alt"></i> سیدنی </h3>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="price"> $90.00 <span>$120.00</span> </div>
-                        <a href="#" class="btn">الان رزرو کن</a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/p-4.jpg" alt="">
-                    <div class="content">
-                        <h3> <i class="fas fa-map-marker-alt"></i> پاریس </h3>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="price"> $90.00 <span>$120.00</span> </div>
-                        <a href="#" class="btn">الان رزرو کن</a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/p-5.jpg" alt="">
-                    <div class="content">
-                        <h3> <i class="fas fa-map-marker-alt"></i> توکیو </h3>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="price"> $90.00 <span>$120.00</span> </div>
-                        <a href="#" class="btn">الان رزرو کن</a>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="images/p-6.jpg" alt="">
-                    <div class="content">
-                        <h3> <i class="fas fa-map-marker-alt"></i> مصر </h3>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="price"> $90.00 <span>$120.00</span> </div>
-                        <a href="#" class="btn">الان رزرو کن</a>
-                    </div>
-                </div>
+            </c:forEach>
 
             </div>
 
