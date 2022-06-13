@@ -1,4 +1,4 @@
-﻿          <!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="wide smoothscroll">
 <head>
 <title>Vacation Travel</title>
@@ -205,20 +205,20 @@
 
 
             <div class="box-container">
-            $(recentHotel)
             <c:forEach items="${recentHotels}" var="recentHotel">
                 <div class="box">
-                    <img src="images/$(recentHotel.images)" alt="$(recentHotel.name)">
+                    <img src="images/${recentHotel.images}" alt="${recentHotel.name}">
                     <div class="content">
-                        <h3> <i class="fas fa-map-marker-alt"></i> $(recentHotel.name) هتل </h3>
-                        <p>$(recentHotel.description)</p>
+                        <h3> <i class="fas fa-map-marker-alt"></i> ${recentHotel.name} </h3>
+                        <p>${recentHotel.summary}</p>
                         <div class="stars">
                          <c:forEach var = "i" begin ="1" end ="${recentHotel.starNumber}">
                             <i class="fas fa-star"></i>
                          </c:forEach>
                         </div>
-                        <div class="price"> <span>طبقه $(recentHotel.floorNumber)</span> </div>
-                        <a href="#" class="btn">الان رزرو کن</a>
+                        <div class="floorNumber"> <span> ${recentHotel.floorNumber} طبقه</span> </div>
+                        <div class="roomNumber"> <span> ${recentHotel.roomNumber} اتاق</span> </div>
+                        <a href="#" class="btn btn-primary">الان رزرو کن</a>
                     </div>
                 </div>
             </c:forEach>
@@ -394,5 +394,6 @@
 </div>
 <script src="js/core.min.js"></script>
 <script src="js/script.js"></script>
+
 </body>
 </html>
