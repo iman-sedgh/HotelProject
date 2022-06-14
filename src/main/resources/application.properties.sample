@@ -1,0 +1,10 @@
+#database
+spring.datasource.url= jdbc:mysql://localhost:3306/hotel?useSSL=true&createDatabaseIfNotExist=true
+spring.datasource.username= javauser
+spring.datasource.password= 12345678
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.hibernate.ddl-auto= update
+#file
+spring.servlet.multipart.max-file-size=40960KB
+spring.servlet.multipart.max-request-size=40960KB
+hotel.files.path=src/main/webapp/
