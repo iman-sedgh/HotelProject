@@ -17,6 +17,9 @@ public class ReservationEntity
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
+    @ManyToOne
+    @Getter @Setter
+    private HotelEntity hotel;
 
     @ManyToOne
     @Getter @Setter
