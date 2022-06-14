@@ -21,9 +21,12 @@ public class ReservationEntity
     @Getter @Setter
     private HotelEntity hotel;
 
-    @ManyToOne
+
     @Getter @Setter
-    private IdentityEntity user;
+    private String costumerFullName;
+
+    @Getter @Setter
+    private String costumerNationalID;
 
     @ManyToMany
     @Getter @Setter
