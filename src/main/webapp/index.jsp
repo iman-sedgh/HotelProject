@@ -207,7 +207,7 @@
             <div class="box-container">
             <c:forEach items="${recentHotels}" var="recentHotel">
                 <div class="box">
-                    <img src="images/${recentHotel.images}" alt="${recentHotel.name}">
+                    <img src="${recentHotel.images[0]}" alt="${recentHotel.name}">
                     <div class="content">
                         <h3> <i class="fas fa-map-marker-alt"></i> ${recentHotel.name} </h3>
                         <p>${recentHotel.summary}</p>
@@ -218,7 +218,7 @@
                         </div>
                         <div class="floorNumber"> <span> ${recentHotel.floorNumber} طبقه</span> </div>
                         <div class="roomNumber"> <span> ${recentHotel.roomNumber} اتاق</span> </div>
-                        <a href="#" class="btn btn-primary">الان رزرو کن</a>
+                        <a href="/hotel?hotelId=${recentHotel.id}" class="btn btn-primary">الان رزرو کن</a>
                     </div>
                 </div>
             </c:forEach>
