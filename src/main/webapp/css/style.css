@@ -30975,3 +30975,8 @@ html .page footer .offset-top-110 {
   font-size: 1.5rem;
   text-decoration: line-through;
 }
+
+#packages img{
+    border-radius:15%;
+
+}
