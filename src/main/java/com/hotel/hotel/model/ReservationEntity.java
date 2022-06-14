@@ -52,4 +52,15 @@ public class ReservationEntity
         return this;
     }
 
+    public ReservationEntity(){}
+
+    public ReservationEntity(HotelEntity hotel, String costumerFullName, String costumerNationalID, Date checkInDT, Date checkOutDT, int price) {
+        this.hotel = hotel;
+        this.costumerFullName = costumerFullName;
+        this.costumerNationalID = costumerNationalID;
+        this.checkInDT = checkInDT;
+        this.checkOutDT = checkOutDT;
+        this.price = price;
+    }
+
 }
