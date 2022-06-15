@@ -45,13 +45,14 @@ public class HotelController {
     }
 
 
-    @GetMapping("/hotel")
+    @RequestMapping("/hotel")
     public String hotelInfo(Model model, @RequestParam("hotelId") int hotelId){
        try {
          HotelEntity hotelInfo = hotelRepository.findById(hotelId)
                  .orElseThrow(HotelNotFoundException::new);
            model.addAttribute("hotel",hotelInfo);
-            return "/singlehotel.jsp";
+           model.addAttribute("isDateForm",true);
+           return "/singlehotel.jsp";
        }catch (HotelNotFoundException e){
            model.addAttribute("message","Hotel not found!");
            return "/singlehotel.jsp";
