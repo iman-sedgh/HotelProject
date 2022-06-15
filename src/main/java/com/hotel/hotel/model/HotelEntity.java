@@ -44,9 +44,6 @@ public class HotelEntity {
     @Getter @Setter
     private String owner;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @Getter @Setter
-    private AccountingEntity accounting =new AccountingEntity();
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
     @Getter @Setter
