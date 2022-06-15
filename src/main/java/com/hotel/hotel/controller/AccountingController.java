@@ -1,7 +1,6 @@
 package com.hotel.hotel.controller;
 
 import com.hotel.hotel.exception.HotelNotFoundException;
-import com.hotel.hotel.model.AccountingEntity;
 import com.hotel.hotel.model.HotelEntity;
 import com.hotel.hotel.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,6 @@ public class AccountingController {
 
 
 
-    @Autowired
-    AccountingRepository accountingRepository;
 
 
     @Autowired
@@ -39,20 +36,16 @@ public class AccountingController {
 
     @PostMapping("/hotel/accounting")
     public String Accounting(Model model,
-                          @ModelAttribute("hotelId") int hotelId,
-                          @ModelAttribute("accounting") AccountingEntity accounting){
+                          @ModelAttribute("hotelId") int hotelId
+                          ){
         try {
             HotelEntity hotel = hotelRepository.findById(hotelId)
                     .orElseThrow(HotelNotFoundException::new);
 
-            if(accounting.getId()==null){
-                accounting.setHotel(hotel);
-                accountingRepository.save(accounting);
-                hotelRepository.save(hotel);
-            }
+
 
             model.addAttribute("hotel",hotel);
-            model.addAttribute("accounting",accounting);
+
 
         }catch (HotelNotFoundException e){
             model.addAttribute("message","Hotel not found!");

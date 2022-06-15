@@ -27,7 +27,7 @@
         <ul>
             <li class="item-li i-dashboard"><a href="/user/hotels">هتل های شما</a></li>
             <li class="item-li i-categories is-active"><a href="/hotels/add">ساختن هتل</a></li>
-            <li class="item-li i-users"><a href="/staffs">کارمندان</a></li>
+
         </ul>
 
     </div>
