@@ -50,10 +50,10 @@
                 </div>
 
                 <ul>
-                    <li class="item-li i-dashboard is-active"><a href="/panel/hotel?hotelId=${hotel.id}">اطلاعات هتل</a></li>
+                    <li class="item-li i-dashboard is-active"><a href="/panel/hotel?hotelId=${hotelId}">اطلاعات هتل</a></li>
 
 
-                    <li class="item-li i-categories"><a href="/hotel/rooms?hotelId=${hotel.id}">اتاق های هتل</a></li>
+                    <li class="item-li i-categories"><a href="/hotel/rooms?hotelId=${hotelId}">اتاق های هتل</a></li>
 
                 </ul>
             </div>
@@ -80,7 +80,7 @@
                          <ul>
                                         <li><a href="/home.jsp">ادمین پنل</a></li>
                                                         <li><a href="/user/hotels" class="is-active">هتل های شما</a></li>
-                                                        <li><a  href="/hotel/rooms?hotelId=${hotel.id}"class="is-active">اتاق های هتل</a></li>
+                                                        <li><a  href="/hotel/rooms?hotelId=${hotelId}"class="is-active">اتاق های هتل</a></li>
                                                         <li><a  href=""class="is-active">اضافه کردن اتاق</a></li>
 
                     </div>
