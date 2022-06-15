@@ -62,7 +62,18 @@
 			<version>1.4</version>
 		</dependency>
 
-<!--		<dependency>-->
+		<dependency>
+			<groupId>org.bardframework</groupId>
+			<artifactId>jalali-date</artifactId>
+			<version>0.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.mfathi91</groupId>
+			<artifactId>persian-date-time</artifactId>
+			<version>4.2.1</version>
+		</dependency>
+
+		<!--		<dependency>-->
 <!--			<groupId>org.springframework.boot</groupId>-->
 <!--			<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
 <!--		</dependency>-->
