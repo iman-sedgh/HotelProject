@@ -53,31 +53,29 @@
             </ul>
         </div>
                 <div class="table__box">
-                    <table class="table">
+                <table class="table">
+                                        <thead role="rowgroup">
+                                        <tr role="row" class="title-row">
+                                            <th>شماره اتاق</th>
+                                            <th>تعداد خواب</th>
+                                            <th>هزینه اتاق</th>
+                                            <th>عملیات</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <c:forEach items="${hotel.rooms}" var="room">
+                                            <tr role="row" >
+                                                <td><a>${room.roomNumber}</a></td>
+                                                <td><a>${room.type}</a></td>
+                                                <td><a>${room.price}</a></td>
+                                                <td>
+                                                    <a href="/hotel/rooms/remove?roomId=${room.id}&hotelId=${hotel.id}" class="item-delete mlg-15" title="حذف"></a>
 
-                        <thead role="rowgroup">
-                        <tr role="row" class="title-row">
-                            <th>شماره اتاق</th>
-                            <th>تعداد خواب</th>
-                            <th>هزینه اتاق</th>
-                            <th>وضعیت رزرو</th>
-                            <th>عملیات</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach items="${hotel.rooms}" var="room">
-                            <tr role="row" >
-                                <td><a>${room.roomNumber}</a></td>
-                                <td><a>${room.type}</a></td>
-                                <td><a>${room.price}</a></td>
-                                <td><a></a></td>
-                                <td>
-                                    <a href="/hotel/rooms/remove?roomId=${room.id}&hotelId=${hotel.id}" class="item-delete mlg-15" title="حذف"></a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
                 </div>
             </div>
     </div>
