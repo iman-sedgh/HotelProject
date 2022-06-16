@@ -52,7 +52,7 @@
         </div>
         <div class="breadcrumb">
             <ul>
-                <li><a href="/home.jsp">ادمین پنل</a></li>
+
                 <li><a href="/hotels/add" class="is-active">ساختن هتل</a></li>
             </ul>
         </div>

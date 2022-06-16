@@ -47,7 +47,7 @@
         </div>
         <div class="breadcrumb">
             <ul>
-                <li><a href="/home.jsp">ادمین پنل</a></li>
+
                 <li><a href="/user/hotels" class="is-active">هتل های شما</a></li>
                 <li><a <a href="/hotel/staffs?hotelId=${hotel.id}"class="is-active">اتاق های هتل</a></li>
             </ul>
