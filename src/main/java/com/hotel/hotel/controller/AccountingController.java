@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigInteger;
+import java.util.List;
+
 @Controller
 public class AccountingController {
 
@@ -26,32 +29,18 @@ public class AccountingController {
 
         model.addAttribute("hotelId",hotelId);
         try {
-            model.addAttribute("hotel",hotelRepository.findById(hotelId).orElseThrow(HotelNotFoundException::new));
-        } catch (HotelNotFoundException e) {
-            model.addAttribute("message","Hotel not found!");
+            int totalReserve = hotelRepository.calcProfit(hotelId);
+            int totalSalary = hotelRepository.calcTotalSalary(hotelId);
+            int profit = totalReserve- totalSalary;
+            model.addAttribute("total_salary",totalSalary);
+            model.addAttribute("total_profit",totalReserve);
+            model.addAttribute("profit",profit);
+        } catch (Exception e) {
+            model.addAttribute("message","something went Wrong!");
         }
         return "/accounting.jsp";
     }
 
-
-    @PostMapping("/hotel/accounting")
-    public String Accounting(Model model,
-                          @ModelAttribute("hotelId") int hotelId
-                          ){
-        try {
-            HotelEntity hotel = hotelRepository.findById(hotelId)
-                    .orElseThrow(HotelNotFoundException::new);
-
-
-
-            model.addAttribute("hotel",hotel);
-
-
-        }catch (HotelNotFoundException e){
-            model.addAttribute("message","Hotel not found!");
-        }
-        return "/accounting.jsp";
-    }
 
 }
 

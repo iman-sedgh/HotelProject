@@ -29,7 +29,7 @@
 
 
     <ul>
-        <li class="item-li i-dashboard is-active"><a href="/panel/hotel?hotelId=${hotel.id}">اطلاعات هتل</a></li>
+        <li class="item-li i-dashboard is-active"><a href="/panel/hotel?hotelId=${hotelId}">اطلاعات هتل</a></li>
 
         </li>
 
@@ -63,20 +63,16 @@
     <div class="main-content">
         <div class="row no-gutters font-size-13 margin-bottom-10">
             <div class="col-3 padding-20 border-radius-3 bg-white margin-left-10 margin-bottom-10">
-                <p> مجموع درآمد کارکنان </p>
-                <p><c:set var="total" value="${0}"/>
-                   <c:forEach var="staff" items="${hotel.staffs}">
-                       <c:set var="total" value="${total + staff.salary}" />
-                   </c:forEach>
-                   <a>${total}ریال</a></p>
+                <p> مجموع حقوق پرداختی ماه </p>
+                   <a>${total_salary}تومان</a></p>
             </div>
             <div class="col-3 padding-20 border-radius-3 bg-white margin-left-10 margin-bottom-10">
-                <p> کل فروش دوره ها</p>
-                <p>2,500,000 تومان</p>
+                <p> سود خالص هتل</p>
+                <p>${total_profit} تومان</p>
             </div>
             <div class="col-3 padding-20 border-radius-3 bg-white margin-bottom-10">
-                <p> درآمد خالص </p>
-                <p>2,500,000 تومان</p>
+                <p> درآمد کل </p>
+                <p>${profit} تومان</p>
             </div>
         </div>
         <div class="row no-gutters font-size-13 margin-bottom-10">
@@ -93,36 +89,4 @@
 </body>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/js.js"></script>
-</html>
-
-
-
---------------------------------------------------------------------------------------
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
-    <head>
-        <title>Accounting</title>
-        <link href="<c:url value="/css/common.css"/>" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <h1>مجموع درآمد کارکنان</h1>
-
-<c:set var="total" value="${0}"/>
-<c:forEach var="staff" items="${hotel.staffs}">
-    <c:set var="total" value="${total + staff.salary}" />
-</c:forEach>
-<a>${total}ریال</a>
-
-<c:set var="total" value="${0}"/>
-<c:forEach var="room" items="${hotel.rooms}">
-    <c:set var="total" value="${total + room.price}" />
-</c:forEach>
-<a>${total}ریال</a>
-
-        <h1>درآمد هتل </h1>
-
-
-
-    </body>
 </html>
