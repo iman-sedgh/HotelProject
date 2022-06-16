@@ -68,12 +68,12 @@
                                             </div>
                                         </div>
                                         <h1 style="text-align=center;">افزودن هتل</h1><br><br>
-                                        <input class="text" type="number" placeholder="شماره اتاق" name="roomNumber" min="1">
-                                        <input class="text" placeholder="نوع اتاق" name="type">
-                                        <input class="text" placeholder="قیمت اتاق" name="price" type="number" min="1">
-                                        <br>
-                                        <br>
-                                        <input type="submit" class="btn btn-netcopy_net" value="اضافه کردن">
+                                                                                <input class="text" type="number" placeholder="شماره اتاق" name="roomNumber" min="1">
+                                                                                <input class="text" placeholder="نوع اتاق" name="type">
+                                                                                <input class="text" placeholder="قیمت اتاق" name="price" type="number" min="1">
+                                                                                <br>
+                                                                                <br>
+                                                                                <input type="submit" class="btn btn-netcopy_net" value="اضافه کردن">
                                     </form>
             </div>
         </div>

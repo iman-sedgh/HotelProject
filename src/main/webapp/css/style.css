@@ -31082,3 +31082,32 @@ background-image: linear-gradient(to right,
  letter-spacing: 1.3px;
  -webkit-transition: 0.2s all;
  transition: 0.2s all}.booking-form .submit-btn:hover, .booking-form .submit-btn:focus{opacity: 0.9}
+
+ //accounting
+
+     -webkit-locale: "en";
+     padding: 0;
+     margin: 0;
+     border: 0;
+     outline: 0;
+     box-sizing: border-box;
+     font-family: "Vazir";
+     direction: rtl;
+
+         font-family: "Vazir";
+         direction: rtl;
+         padding: 0;
+         margin: 0;
+         border: 0;
+         outline: 0;
+         box-sizing: border-box;
+
+             padding: 0;
+             margin: 0;
+             border: 0;
+             outline: 0;
+             box-sizing: border-box;
+             font-family: "Vazir";
+             direction: rtl;
+             background: #eaecef;
+             color: #636e72;
