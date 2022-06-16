@@ -81,11 +81,9 @@
                                 <td><a>${staff.nationalCode}</a></td>
                                 <td><a>${staff.phoneNumber}</a></td>
                                 <td><a>${staff.salary}ریال</a></td>
-                                <td></a></td>
                                 <td>
                                     <a href="/hotel/staffs/remove?staffId=${staff.id}&hotelId=${hotel.id}" class="item-delete mlg-15" title="حذف"></a>
-                                    <a href="/hotel?hotelId=${hotel.id}" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
-                                    <a href="" class="item-edit " title="ویرایش"></a>
+
                                 </td>
                             </tr>
                         </c:forEach>
