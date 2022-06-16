@@ -101,16 +101,23 @@ public class HotelController {
 
         ArrayList<String> images = new ArrayList<>();
         AtomicInteger count = new AtomicInteger();
-        files.forEach((file) -> {
-            try {
-                String path = "files/"+hotel.getId()+ count.get() +file.getOriginalFilename();
-                Files.write(Path.of(filesPath+path),file.getBytes());
-                images.add(path);
-                count.getAndIncrement();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
+
+        //        set default image if user dosen't choose any.
+        if(files.get(0).getOriginalFilename() == "") {
+            images.add("img/hotel.jpg");
+        }
+        else {
+            files.forEach((file) -> {
+                try {
+                    String path = "files/" + hotel.getId() + count.get() + file.getOriginalFilename();
+                    Files.write(Path.of(filesPath + path), file.getBytes());
+                    images.add(path);
+                    count.getAndIncrement();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+        }
         hotel.setImages(images);
         hotelRepository.save(hotel);
         model.addAttribute("hotel",hotel);
