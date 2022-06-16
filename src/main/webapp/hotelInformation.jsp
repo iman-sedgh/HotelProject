@@ -13,9 +13,6 @@
 </head>
 <body>
 <h1> Welcome to ${hotel.name}</h1>
-        <c:forEach items="${hotel.images}" var="image">
-            <img src="/${image}" alt="image">
-        </c:forEach>
     <div class="sidebar__nav border-top border-left  ">
         <span class="bars d-none padding-0-18"></span>
         <a class="header__logo  d-none" href="/"></a>
@@ -71,6 +68,9 @@
             </ul>
         </div>
         <br>
+        <c:forEach items="${hotel.images}" var="image">
+                    <img src="/${image}" width="270" height="240" class="img-responsive center-block" alt="image" >
+        </c:forEach>
         <br>
         <h3>درباره هتل ${hotel.name} بیشتر بدانید!</h3><br>
         <p>${hotel.description}</p>
