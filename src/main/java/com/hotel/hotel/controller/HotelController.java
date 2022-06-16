@@ -73,12 +73,7 @@ public class HotelController {
     }
     @GetMapping("/hotels")
     public String allHotels(Model model){
-        List<HotelDto> hotels = hotelRepository.findAll().stream().map(hotelEntity -> HotelDto.builder()
-                .id(hotelEntity.getId())
-                .name(hotelEntity.getName())
-                .city(hotelEntity.getCity())
-                .address(hotelEntity.getAddress())
-                .build()).toList();
+        List<HotelEntity> hotels = hotelRepository.findAll();
         model.addAttribute("hotels",hotels);
         return "/hotels.jsp";
     }
