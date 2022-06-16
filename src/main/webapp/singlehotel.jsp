@@ -108,7 +108,7 @@
                                         <form action="/hotel/reserving/submit" method="post">
                                             <c:forEach items="${rooms}" var="room" varStatus="loop">
                                                 <div style="margin:15px">
-                                                    <input type="checkbox" id="room-${room.id}" name="roomsId" value="${room.id}">
+                                                    <input type="checkbox" id="room-${room.id}" name="roomsID" value="${room.id}">
                                                     <label for="room-${room.id}">
                                                         <div class="room">
                                                             <p>

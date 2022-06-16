@@ -8,21 +8,16 @@ import com.hotel.hotel.model.RoomEntity;
 import com.hotel.hotel.repository.HotelRepository;
 import com.hotel.hotel.repository.ReservationRepository;
 import com.hotel.hotel.repository.RoomRepository;
-import org.bardframework.time.format.DateTimeFormatterBuilderJalali;
-import org.bardframework.time.format.DateTimeFormatterJalali;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
-import java.text.DateFormat;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Controller
 public class ReservationController {
@@ -52,16 +47,20 @@ public class ReservationController {
         hotel.getRooms().forEach(room->{
             if (room.getReserved_dates().isEmpty())
                 rooms.add(room);
-            else
-                room.getReserved_dates().forEach(map->{
-                    if (map.get("start").after(endDate) || map.get("end").before(startDate)){
-                        rooms.add(room);
+            else {
+                AtomicReference<Boolean> isFree = new AtomicReference<>(true);
+                room.getReserved_dates().forEach(map -> {
+                    if ( (map.get("start").after(startDate) && map.get("start").before(endDate) )
+                            || (map.get("end").after(startDate)) && map.get("end").after(endDate) )  {
+                        isFree.set(false);
                     }
                 });
+                if (isFree.get()) rooms.add(room);
+            }
         });
 
         model.addAttribute("rooms",rooms);
-        model.addAttribute("isDateForm",false);
+        model.addAttribute("isDateForm", rooms.size() <= 0);
         model.addAttribute("start",startDate);
         model.addAttribute("end",endDate);
         return "/singlehotel.jsp";
